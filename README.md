@@ -1,3 +1,3 @@
-# coronium-cs-docs
+# Coronium ChatterBox Docs
 
-Documentation for Coronium CS - A Lua based chat/messaging server 
+Documentation for __[Coronium ChatterBox](https://github.com/develephant/coronium-chatterbox)__ 

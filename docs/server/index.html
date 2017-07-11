@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Server Guide - Coronium ChatterBox</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Server Guide";
+    var mkdocs_page_input_path = "server.md";
+    var mkdocs_page_url = "/server/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Coronium ChatterBox</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="..">Introduction</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../guide/">Client Guide</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../events/">Client Events</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../actions/">Client Actions</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Server Guide</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#system-service">System Service</a></li>
+                
+                    <li><a class="toctree-l4" href="#configuration">Configuration</a></li>
+                
+                    <li><a class="toctree-l4" href="#viewing-logs">Viewing Logs</a></li>
+                
+            
+            </ul>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../development/">Development Tips</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../example/">Example Setup</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../about/">About</a>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Coronium ChatterBox</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Server Guide</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="system-service">System Service</h1>
+<p>When your <strong>Coronium ChatterBox</strong> instance starts, its monitored by a utility called <strong>Monit</strong>, which makes sure that your instance keeps running. In the event that the server runs into an issue or crashes, it will be restarted shortly.</p>
+<p>In the rare case where you need to manually stop or start the instance, log in using the <strong>coronium</strong> user.</p>
+<div class="codehilite"><pre><span></span>ssh coronium@&lt;your-instance-ip&gt;
+</pre></div>
+
+
+<p>To stop the instance, on the command line, enter:</p>
+<div class="codehilite"><pre><span></span>sudo monit stop chatterbox
+</pre></div>
+
+
+<p>To start the instance, use:</p>
+<div class="codehilite"><pre><span></span>sudo monit start chatterbox
+</pre></div>
+
+
+<p><em>You will be prompted for your password. The default is <strong>coroniumadmin</strong>.</em></p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>You should rarely need to manually control the instance.</p>
+</div>
+<hr />
+<h2 id="configuration">Configuration</h2>
+<p>The following configuration options are available to set on the server-side:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>key</code></td>
+<td>The client connection key.</td>
+<td>"8477ebc412386117059664d45637e397"</td>
+</tr>
+<tr>
+<td><code>port</code></td>
+<td>The port that the client connects to.</td>
+<td>7175</td>
+</tr>
+<tr>
+<td><code>room</code></td>
+<td>The default room the client joins, if not provided.</td>
+<td>"Lobby"</td>
+</tr>
+<tr>
+<td><code>timeout</code></td>
+<td>The global client timeout setting, in seconds.</td>
+<td>900 (15 min)</td>
+</tr>
+</tbody>
+</table>
+<p>To adjust the configuration options, you will need to log into the server via SFTP:</p>
+<p>First log into your <strong>Coronium ChatterBox</strong> instance with an SFTP program.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The open source SFTP browser <a href="https://filezilla-project.org/">FileZilla</a> works well for both OSX and Windows.</p>
+</div>
+<p>Log in with the SFTP program using the <strong>coronium</strong> user.</p>
+<p>Supply the password (if you didn't change it from the fresh install, it's <strong>coroniumadmin</strong>).</p>
+<p>Once inside your instance, download the <strong>config.lua</strong> file to your local machine.</p>
+<p>Open the <strong>config.lua</strong> file in a text editor and edit the config table, as needed.</p>
+<p><em>Default table in config.lua:</em></p>
+<div class="codehilite"><pre><span></span><span class="kr">return</span> 
+<span class="p">{</span>
+  <span class="n">key</span> <span class="o">=</span> <span class="s2">&quot;8477ebc412386117059664d45637e397&quot;</span><span class="p">,</span>
+  <span class="n">port</span> <span class="o">=</span> <span class="mi">7175</span><span class="p">,</span>
+  <span class="n">room</span> <span class="o">=</span> <span class="s2">&quot;Lobby&quot;</span><span class="p">,</span>
+  <span class="n">timeout</span> <span class="o">=</span> <span class="mi">900</span> <span class="c1">--secs</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>Once your changes are complete, upload the <strong>config.lua</strong> back into same directory.</p>
+<p>Now you'll need to log into the server via SSH using the <strong>coronium</strong> user:</p>
+<div class="codehilite"><pre><span></span>ssh coronium@&lt;your-instance-ip&gt;
+</pre></div>
+
+
+<p>Once you are logged in, restart the <strong>chatterbox</strong> service to make the new config active:</p>
+<div class="codehilite"><pre><span></span>sudo monit restart chatterbox
+</pre></div>
+
+
+<p>Your instance will now be using the new configuration options.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You can also use the <strong>nano</strong> text editor on the server (nano config.lua), skipping the config.lua download steps.</p>
+</div>
+<h4 id="key">Key</h4>
+<p>To help protect from errant client connections, the server contains a key that must be matched with client connection call. If the key is incorrect or not provided, the connection will be closed. There is a default key baked into the client and the server, but you should change this at your convienence.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Once you change the server key, make sure to also update your client connection method by passing the <code>key</code> parameter, or you won't be able to connect. See <a href="../guide/#connecting-the-client">Connecting The Client</a>.</p>
+</div>
+<h4 id="port">Port</h4>
+<p>By default the server will listen for new connections on port 7175, you can change this option as desired.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Once you change the server port, make sure to also update your client connection method by passing the <strong>port</strong> parameter, or you won't be able to connect. See <a href="../guide/#connecting-the-client">Connecting The Client</a>.</p>
+</div>
+<h4 id="room">Room</h4>
+<p>When a client connection is confirmed, they will be added to the default room <em>Lobby</em>. You can change this value to make the default something different.</p>
+<h4 id="timeout">Timeout</h4>
+<p>Client connection timeouts are managed on the server-side. By default a client will be disconnected after being idle for 15 minutes. This option can be set to 0 to disable the timeout.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>While you can disable the client timeout by provding a 0 as a config value, you run the risk of have a client "hang" or in other cases an errant client that takes up one of the servers connections. <strong><em>Disabling the timeout is not recommended</em></strong>.</p>
+</div>
+<hr />
+<h2 id="viewing-logs">Viewing Logs</h2>
+<p>When developing your application, there may be times when you'd like to see what's happening on the server side. You can view the log file to acheive this.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Log file timestamps are noted in UTC.</p>
+</div>
+<p>First, log into your instance using the <strong>coronium</strong> user:</p>
+<div class="codehilite"><pre><span></span>ssh coronium@&lt;your-instance-ip&gt;
+</pre></div>
+
+
+<p>To view the log file run the following on the command line:</p>
+<div class="codehilite"><pre><span></span>cat logs/chatterbox.log
+</pre></div>
+
+
+<p>To follow the log in real-time, use:</p>
+<div class="codehilite"><pre><span></span>tail -f logs/chatterbox.log
+</pre></div>
+
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The log file is managed automatically, and will be "rotated" once it exceeds a certain size limit.</p>
+</div>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../development/" class="btn btn-neutral float-right" title="Development Tips">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../actions/" class="btn btn-neutral" title="Client Actions"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>&copy;2017 C. Byerley - develephant.com</p>
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+    
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../actions/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../development/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script src="../js/theme.js"></script>
+
+</body>
+</html>

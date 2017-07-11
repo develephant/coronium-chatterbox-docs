@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Client Events - Coronium ChatterBox</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Client Events";
+    var mkdocs_page_input_path = "events.md";
+    var mkdocs_page_url = "/events/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Coronium ChatterBox</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="..">Introduction</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../guide/">Client Guide</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Client Events</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#event-table">Event Table</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#event-listeners">Event Listeners</a></li>
+                
+                    <li><a class="toctree-l4" href="#onclientlist">OnClientList</a></li>
+                
+                    <li><a class="toctree-l4" href="#onclosed">OnClosed</a></li>
+                
+                    <li><a class="toctree-l4" href="#onconnect">OnConnect</a></li>
+                
+                    <li><a class="toctree-l4" href="#onerror">OnError</a></li>
+                
+                    <li><a class="toctree-l4" href="#onjoined">OnJoined</a></li>
+                
+                    <li><a class="toctree-l4" href="#onleft">OnLeft</a></li>
+                
+                    <li><a class="toctree-l4" href="#onmessage">OnMessage</a></li>
+                
+                    <li><a class="toctree-l4" href="#onnamechange">OnNameChange</a></li>
+                
+                    <li><a class="toctree-l4" href="#onroomlist">OnRoomList</a></li>
+                
+                    <li><a class="toctree-l4" href="#onsystemmessage">OnSystemMessage</a></li>
+                
+                    <li><a class="toctree-l4" href="#ontimeout">OnTimeout</a></li>
+                
+                    <li><a class="toctree-l4" href="#onunknownevent">OnUnknownEvent</a></li>
+                
+                    <li><a class="toctree-l4" href="#onwhisper">OnWhisper</a></li>
+                
+            
+            </ul>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../actions/">Client Actions</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../server/">Server Guide</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../development/">Development Tips</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../example/">Example Setup</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../about/">About</a>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Coronium ChatterBox</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Client Events</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="event-table">Event Table</h1>
+<table>
+<thead>
+<tr>
+<th>Event Name</th>
+<th>Description</th>
+<th>Scope</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#onconnect"><code>OnConnect</code></a></td>
+<td>The client has connected to the server.</td>
+<td><em>client</em></td>
+</tr>
+<tr>
+<td><a href="#onjoined"><code>OnJoined</code></a></td>
+<td>A client has joined the current room.</td>
+<td><em>room</em></td>
+</tr>
+<tr>
+<td><a href="#onleft"><code>OnLeft</code></a></td>
+<td>A client has left the current room.</td>
+<td><em>room</em></td>
+</tr>
+<tr>
+<td><a href="#onmessage"><code>OnMessage</code></a></td>
+<td>A room message has been received.</td>
+<td><em>room</em></td>
+</tr>
+<tr>
+<td><a href="#onwhisper"><code>OnWhisper</code></a></td>
+<td>A private message has been received.</td>
+<td><em>client</em></td>
+</tr>
+<tr>
+<td><a href="#onsystemmessage"><code>OnSystemMessage</code></a></td>
+<td>A system message has been received.</td>
+<td><em>room</em></td>
+</tr>
+<tr>
+<td><a href="#onclientlist"><code>OnClientList</code></a></td>
+<td>The client list of the current room.</td>
+<td><em>room</em></td>
+</tr>
+<tr>
+<td><a href="#onroomlist"><code>OnRoomList</code></a></td>
+<td>A list of rooms active on the server.</td>
+<td><em>client</em></td>
+</tr>
+<tr>
+<td><a href="#onnamechange"><code>OnNameChange</code></a></td>
+<td>A client has changed their name.</td>
+<td><em>room</em></td>
+</tr>
+<tr>
+<td><a href="#onunknownevent"><code>OnUnknownEvent</code></a></td>
+<td>An unknown event has been received.</td>
+<td><em>client</em></td>
+</tr>
+<tr>
+<td><a href="#onclosed"><code>OnClosed</code></a></td>
+<td>The client has disconnected from the server.</td>
+<td><em>client</em></td>
+</tr>
+<tr>
+<td><a href="#ontimeout"><code>OnTimeout</code></a></td>
+<td>The client connection has timed out.</td>
+<td><em>client</em></td>
+</tr>
+<tr>
+<td><a href="#onerror"><code>OnError</code></a></td>
+<td>The client has received an error message.</td>
+<td><em>client</em></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="event-listeners">Event Listeners</h1>
+<p>To listen for events, add an event listener:</p>
+<div class="codehilite"><pre><span></span><span class="kd">local</span> <span class="n">cb</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s1">&#39;chatterbox.client&#39;</span><span class="p">)</span>
+
+<span class="kd">local</span> <span class="kr">function</span> <span class="nf">onMessage</span><span class="p">(</span> <span class="n">evt</span> <span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">evt</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">name</span><span class="p">,</span> <span class="n">evt</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">msg</span><span class="p">)</span>
+<span class="kr">end</span>
+
+<span class="n">cb</span><span class="p">.</span><span class="n">events</span><span class="p">:</span><span class="n">addEventListener</span><span class="p">(</span><span class="s1">&#39;OnMessage&#39;</span><span class="p">,</span> <span class="n">onMessage</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>All event properties can be found on the <code>data</code> object of the event (<code>evt.data.&lt;prop&gt;</code>). See the following event details for their available properties.</p>
+</div>
+<hr />
+<h3 id="onclientlist">OnClientList</h3>
+<p>The client has received the client list for the current room.</p>
+<p><strong>Data Properties</strong></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>clients</code></td>
+<td>A table array of clients.</td>
+<td>Table</td>
+</tr>
+<tr>
+<td><code>cnt</code></td>
+<td>The client list count.</td>
+<td>Number</td>
+</tr>
+<tr>
+<td><code>room</code></td>
+<td>The current room name.</td>
+<td>String</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example</strong></p>
+<div class="codehilite"><pre><span></span><span class="kd">local</span> <span class="n">cb</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s1">&#39;chatterbox.client&#39;</span><span class="p">)</span>
+
+<span class="kd">local</span> <span class="kr">function</span> <span class="nf">onClientList</span><span class="p">(</span> <span class="n">evt</span> <span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;client count:&#39;</span><span class="o">..</span><span class="n">evt</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">cnt</span><span class="p">)</span>
+  <span class="kd">local</span> <span class="n">clients</span> <span class="o">=</span> <span class="n">evt</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">clients</span>
+  <span class="kr">for</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="o">#</span><span class="n">clients</span> <span class="kr">do</span>
+    <span class="kd">local</span> <span class="n">client</span> <span class="o">=</span> <span class="n">clients</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">client</span><span class="p">.</span><span class="n">name</span><span class="p">,</span> <span class="n">client</span><span class="p">.</span><span class="n">id</span><span class="p">)</span>
+  <span class="kr">end</span>
+<span class="kr">end</span>
+
+<span class="n">cb</span><span class="p">.</span><span class="n">events</span><span class="p">:</span><span class="n">addEventListener</span><span class="p">(</span><span class="s1">&#39;OnClientList&#39;</span><span class="p">,</span> <span class="n">onClientList</span><span class="p">)</span>
+</pre></div>
+
+
+<hr />
+<h3 id="onclosed">OnClosed</h3>
+<p>The client has been disconnected from the server.</p>
+<p><strong>Data Properties</strong></p>
+<p><em>This event has no available properties.</em></p>
+<div class="codehilite"><pre><span></span><span class="kd">local</span> <span class="n">cb</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s1">&#39;chatterbox.client&#39;</span><span class="p">)</span>
+
+<span class="kd">local</span> <span class="kr">function</span> <span class="nf">onClosed</span><span class="p">()</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Client has disconnected from the server&#39;</span><span class="p">)</span>
+<span class="kr">end</span>
+
+<span class="n">cb</span><span class="p">.</span><span class="n">events</span><span class="p">:</span><span class="n">addEventListener</span><span class="p">(</span><span class="s1">&#39;OnClosed&#39;</span><span class="p">,</span> <span class="n">onClosed</span><span class="p">)</span>
+</pre></div>
+
+
+<hr />
+<h3 id="onconnect">OnConnect</h3>
+<p>The client has connected to the server.</p>
+<p><strong>Data Properties</strong></p>
+<p><em>This event has no available properties.</em></p>
+<p><strong>Example</strong></p>
+<div class="codehilite"><pre><span></span><span class="kd">local</span> <span class="n">cb</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s1">&#39;chatterbox.client&#39;</span><span class="p">)</span>
+
+<span class="kd">local</span> <span class="kr">function</span> <span class="nf">onConnect</span><span class="p">()</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Client has successfully connected to the server&#39;</span><span class="p">)</span>
+<span class="kr">end</span>
+
+<span class="n">cb</span><span class="p">.</span><span class="n">events</span><span class="p">:</span><span class="n">addEventListener</span><span class="p">(</span><span class="s1">&#39;OnConnect&#39;</span><span class="p">,</span> <span class="n">onConnect</span><span class="p">)</span>
+</pre></div>
+
+
+<hr />
+<h3 id="onerror">OnError</h3>
+<p>The client has received an error message.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code>OnError</code> event triggers on both local and server-side errors.</p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The <code>OnError</code> event does not contain a <code>data</code> property. To access the error, use the <code>error</code> key directly on the event: <code>evt.error</code>.</p>
+</div>
+<p><strong>Example</strong></p>
+<div class="codehilite"><pre><span></span><span class="kd">local</span> <span class="n">cb</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s1">&#39;chatterbox.client&#39;</span><span class="p">)</span>
+
+<span class="kd">local</span> <span class="kr">function</span> <span class="nf">OnError</span><span class="p">(</span> <span class="n">evt</span> <span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Client Error: &#39;</span><span class="o">..</span><span class="n">evt</span><span class="p">.</span><span class="n">error</span><span class="p">)</span>
+<span class="kr">end</span>
+
+<span class="n">cb</span><span class="p">.</span><span class="n">events</span><span class="p">:</span><span class="n">addEventListener</span><span class="p">(</span><span class="s1">&#39;OnError&#39;</span><span class="p">,</span> <span class="n">onError</span><span class="p">)</span>
+</pre></div>
+
+
+<hr />
+<h3 id="onjoined">OnJoined</h3>
+<p>A client has joined the current room.</p>
+<p><strong>Data Properties</strong></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>Name of the joining client.</td>
+<td>String</td>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td>Unique ID of the client.</td>
+<td>String</td>
+</tr>
+<tr>
+<td><code>room</code></td>
+<td>The current room name.</td>
+<td>String</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example</strong></p>
+<div class="codehilite"><pre><span></span><span class="kd">local</span> <span class="n">cb</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s1">&#39;chatterbox.client&#39;</span><span class="p">)</span>
+
+<span class="kd">local</span> <span class="kr">function</span> <span class="nf">onJoined</span><span class="p">(</span> <span class="n">evt</span> <span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">evt</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">name</span><span class="p">,</span> <span class="n">evt</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">id</span><span class="p">,</span> <span class="n">evt</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">room</span><span class="p">)</span>
+<span class="kr">end</span>
+
+<span class="n">cb</span><span class="p">.</span><span class="n">events</span><span class="p">:</span><span class="n">addEventListener</span><span class="p">(</span><span class="s1">&#39;OnJoined&#39;</span><span class="p">,</span> <span class="n">onJoined</span><span class="p">)</span>
+</pre></div>
+
+
+<hr />
+<h3 id="onleft">OnLeft</h3>
+<p>A client has left the current room.</p>
+<p><strong>Data Properties</strong></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>Name of the joining client.</td>
+<td>String</td>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td>Unique ID of the client.</td>
+<td>String</td>
+</tr>
+<tr>
+<td><code>room</code></td>
+<td>The current room name.</td>
+<td>String</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example</strong></p>
+<div class="codehilite"><pre><span></span><span class="kd">local</span> <span class="n">cb</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s1">&#39;chatterbox.client&#39;</span><span class="p">)</span>
+
+<span class="kd">local</span> <span class="kr">function</span> <span class="nf">onLeft</span><span class="p">(</span> <span class="n">evt</span> <span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">evt</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">name</span><span class="p">,</span> <span class="n">evt</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">id</span><span class="p">,</span> <span class="n">evt</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">room</span><span class="p">)</span>
+<span class="kr">end</span>
+
+<span class="n">cb</span><span class="p">.</span><span class="n">events</span><span class="p">:</span><span class="n">addEventListener</span><span class="p">(</span><span class="s1">&#39;OnLeft&#39;</span><span class="p">,</span> <span class="n">onLeft</span><span class="p">)</span>
+</pre></div>
+
+
+<hr />
+<h3 id="onmessage">OnMessage</h3>
+<p>A room message has been received.</p>
+<p><strong>Data Properties</strong></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>Name of the sender.</td>
+<td>String</td>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td>Unique ID of the sender.</td>
+<td>String</td>
+</tr>
+<tr>
+<td><code>msg</code></td>
+<td>The message content.</td>
+<td>String</td>
+</tr>
+<tr>
+<td><code>room</code></td>
+<td>The current room name.</td>
+<td>String</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example</strong></p>
+<div class="codehilite"><pre><span></span><span class="kd">local</span> <span class="n">cb</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s1">&#39;chatterbox.client&#39;</span><span class="p">)</span>
+
+<span class="kd">local</span> <span class="kr">function</span> <span class="nf">onMessage</span><span class="p">(</span> <span class="n">evt</span> <span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">evt</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">name</span><span class="p">,</span> <span class="n">evt</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">msg</span><span class="p">)</span>
+<span class="kr">end</span>
+
+<span class="n">cb</span><span class="p">.</span><span class="n">events</span><span class="p">:</span><span class="n">addEventListener</span><span class="p">(</span><span class="s1">&#39;OnMessage&#39;</span><span class="p">,</span> <span class="n">onMessage</span><span class="p">)</span>
+</pre></div>
+
+
+<hr />
+<h3 id="onnamechange">OnNameChange</h3>
+<p>A client has changed their display name.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>After this event is received an <code>OnClientList</code> event will follow with the updated name, allowing for easy updating of the client display list.</p>
+</div>
+<p><strong>Data Properties</strong></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>New name of the client.</td>
+<td>String</td>
+</tr>
+<tr>
+<td><code>old_name</code></td>
+<td>Previous name of the client.</td>
+<td>String</td>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td>Unique ID of the client.</td>
+<td>String</td>
+</tr>
+<tr>
+<td><code>room</code></td>
+<td>The current room name.</td>
+<td>String</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example</strong></p>
+<div class="codehilite"><pre><span></span><span class="kd">local</span> <span class="n">cb</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s1">&#39;chatterbox.client&#39;</span><span class="p">)</span>
+
+<span class="kd">local</span> <span class="kr">function</span> <span class="nf">onNameChange</span><span class="p">(</span> <span class="n">evt</span> <span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Old name was: &#39;</span><span class="o">..</span><span class="n">evt</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">old_name</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;New name is: &#39;</span><span class="o">..</span><span class="n">evt</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">name</span><span class="p">)</span>
+<span class="kr">end</span>
+
+<span class="n">cb</span><span class="p">.</span><span class="n">events</span><span class="p">:</span><span class="n">addEventListener</span><span class="p">(</span><span class="s1">&#39;OnNameChange&#39;</span><span class="p">,</span> <span class="n">onNameChange</span><span class="p">)</span>
+</pre></div>
+
+
+<hr />
+<h3 id="onroomlist">OnRoomList</h3>
+<p>A list of active rooms on the server.</p>
+<p><strong>Data Properties</strong></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>rooms</code></td>
+<td>A table array of rooms names.</td>
+<td>String</td>
+</tr>
+<tr>
+<td><code>cnt</code></td>
+<td>The client list count.</td>
+<td>String</td>
+</tr>
+<tr>
+<td><code>room</code></td>
+<td>The current room name.</td>
+<td>String</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example</strong></p>
+<div class="codehilite"><pre><span></span><span class="kd">local</span> <span class="n">cb</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s1">&#39;chatterbox.client&#39;</span><span class="p">)</span>
+
+<span class="kd">local</span> <span class="kr">function</span> <span class="nf">onRoomList</span><span class="p">(</span> <span class="n">evt</span> <span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;room count:&#39;</span><span class="o">..</span><span class="n">evt</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">cnt</span><span class="p">)</span>
+  <span class="kd">local</span> <span class="n">rooms</span> <span class="o">=</span> <span class="n">evt</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">rooms</span>
+  <span class="kr">for</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="o">#</span><span class="n">rooms</span> <span class="kr">do</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">rooms</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">name</span><span class="p">)</span>
+  <span class="kr">end</span>
+<span class="kr">end</span>
+
+<span class="n">cb</span><span class="p">.</span><span class="n">events</span><span class="p">:</span><span class="n">addEventListener</span><span class="p">(</span><span class="s1">&#39;onRoomList&#39;</span><span class="p">,</span> <span class="n">onRoomList</span><span class="p">)</span>
+</pre></div>
+
+
+<hr />
+<h3 id="onsystemmessage">OnSystemMessage</h3>
+<p>A system message has been received.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A system message can be used to broadcast a message for service related events outside of the "chat" layer.</p>
+</div>
+<p><strong>Data Properties</strong></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>action</code></td>
+<td>The system event action ID.</td>
+<td>String</td>
+</tr>
+<tr>
+<td><code>payload</code></td>
+<td>The system event payload.</td>
+<td>Table</td>
+</tr>
+<tr>
+<td><code>room</code></td>
+<td>The current room name.</td>
+<td>String</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example</strong></p>
+<div class="codehilite"><pre><span></span><span class="kd">local</span> <span class="n">cb</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s1">&#39;chatterbox.client&#39;</span><span class="p">)</span>
+
+<span class="kd">local</span> <span class="kr">function</span> <span class="nf">onSystemMessage</span><span class="p">(</span> <span class="n">evt</span> <span class="p">)</span>
+  <span class="kr">if</span> <span class="n">evt</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">action</span> <span class="o">==</span> <span class="s1">&#39;player_turn&#39;</span> <span class="kr">then</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;players turn is: &#39;</span><span class="o">..</span><span class="n">evt</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">payload</span><span class="p">)</span>
+  <span class="kr">end</span>
+<span class="kr">end</span>
+
+<span class="n">cb</span><span class="p">.</span><span class="n">events</span><span class="p">:</span><span class="n">addEventListener</span><span class="p">(</span><span class="s1">&#39;OnSystemMessage&#39;</span><span class="p">,</span> <span class="n">onSystemMessage</span><span class="p">)</span>
+</pre></div>
+
+
+<hr />
+<h3 id="ontimeout">OnTimeout</h3>
+<p>The client has timed out.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The timeout event is only a status message and does not disconnect the client. When the client receives this message you should use the <code>disconnect</code> action to close the connection, if wanted.</p>
+</div>
+<p><strong>Data Properties</strong></p>
+<p><em>This event has no available properties.</em></p>
+<p><strong>Example</strong></p>
+<div class="codehilite"><pre><span></span><span class="kd">local</span> <span class="n">cb</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s1">&#39;chatterbox.client&#39;</span><span class="p">)</span>
+
+<span class="kd">local</span> <span class="kr">function</span> <span class="nf">onTimeout</span><span class="p">()</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The client has timed out&#39;</span><span class="p">)</span>
+
+  <span class="c1">--if you&#39;d like to disconnect on a timeout event:</span>
+  <span class="n">cs</span><span class="p">:</span><span class="n">disconnect</span><span class="p">()</span>
+<span class="kr">end</span>
+
+<span class="n">cb</span><span class="p">.</span><span class="n">events</span><span class="p">:</span><span class="n">addEventListener</span><span class="p">(</span><span class="s1">&#39;OnTimeout&#39;</span><span class="p">,</span> <span class="n">onTimeout</span><span class="p">)</span>
+</pre></div>
+
+
+<hr />
+<h3 id="onunknownevent">OnUnknownEvent</h3>
+<p>An unknown event type was received by the client.</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>You should only us this event for logging purposes. Do not perform any actions on it.</p>
+</div>
+<p><strong>Data Properties</strong></p>
+<p><em>This event has no available properties.</em></p>
+<p><strong>Example</strong></p>
+<div class="codehilite"><pre><span></span><span class="kd">local</span> <span class="n">cb</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s1">&#39;chatterbox.client&#39;</span><span class="p">)</span>
+
+<span class="kd">local</span> <span class="kr">function</span> <span class="nf">onUnkownEvent</span><span class="p">()</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;An unknown event was received&#39;</span><span class="p">)</span>
+<span class="kr">end</span>
+
+<span class="n">cb</span><span class="p">.</span><span class="n">events</span><span class="p">:</span><span class="n">addEventListener</span><span class="p">(</span><span class="s1">&#39;OnUnknownEvent&#39;</span><span class="p">,</span> <span class="n">onUnkownEvent</span><span class="p">)</span>
+</pre></div>
+
+
+<hr />
+<h3 id="onwhisper">OnWhisper</h3>
+<p>A private message has been received.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This message will only be received by its intended recipient.</p>
+</div>
+<p><strong>Data Properties</strong></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>Name of the sender.</td>
+<td>String</td>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td>Unique ID of the sender.</td>
+<td>String</td>
+</tr>
+<tr>
+<td><code>msg</code></td>
+<td>The message content.</td>
+<td>String</td>
+</tr>
+<tr>
+<td><code>room</code></td>
+<td>The current room name.</td>
+<td>String</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example</strong></p>
+<div class="codehilite"><pre><span></span><span class="kd">local</span> <span class="n">cb</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s1">&#39;chatterbox.client&#39;</span><span class="p">)</span>
+
+<span class="kd">local</span> <span class="kr">function</span> <span class="nf">onWhisper</span><span class="p">(</span> <span class="n">evt</span> <span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">evt</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">name</span><span class="p">,</span> <span class="n">evt</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">msg</span><span class="p">)</span>
+<span class="kr">end</span>
+
+<span class="n">cb</span><span class="p">.</span><span class="n">events</span><span class="p">:</span><span class="n">addEventListener</span><span class="p">(</span><span class="s1">&#39;OnWhisper&#39;</span><span class="p">,</span> <span class="n">onWhisper</span><span class="p">)</span>
+</pre></div>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../actions/" class="btn btn-neutral float-right" title="Client Actions">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../guide/" class="btn btn-neutral" title="Client Guide"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>&copy;2017 C. Byerley - develephant.com</p>
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+    
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../guide/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../actions/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script src="../js/theme.js"></script>
+
+</body>
+</html>

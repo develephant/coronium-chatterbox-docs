@@ -1,0 +1,17 @@
+site_name: Coronium ChatterBox
+pages:
+  - 'Introduction': 'index.md'
+  - 'Client Guide': 'guide.md'
+  - 'Client Events': 'events.md'
+  - 'Client Actions': 'actions.md'
+  - 'Server Guide': 'server.md'
+  - 'Development Tips': 'development.md'
+  - 'Example Setup': 'example.md'
+  - 'About': 'about.md'
+copyright: "&copy;2017 C. Byerley - develephant.com"
+theme: readthedocs
+site_url: https://develephant.github.io/coronium-cs-docs
+site_dir: ../docs
+markdown_extensions:
+  - admonition
+  - codehilite

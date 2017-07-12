@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="../css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
   <link rel="stylesheet" href="../css/highlight.css">
+  <link href="../css/code.css" rel="stylesheet">
   
   <script>
     // Current page data
@@ -45,69 +46,53 @@
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
 	<ul class="current">
+	  
           
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="..">Introduction</a>
-        
-    </li>
-<li>
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Introduction</a>
+	    </li>
           
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../guide/">Client Guide</a>
-        
-    </li>
-<li>
+            <li class="toctree-l1">
+		
+    <a class="" href="../guide/">Client Guide</a>
+	    </li>
           
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../events/">Client Events</a>
-        
-    </li>
-<li>
+            <li class="toctree-l1">
+		
+    <a class="" href="../events/">Client Events</a>
+	    </li>
           
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../actions/">Client Actions</a>
-        
-    </li>
-<li>
+            <li class="toctree-l1">
+		
+    <a class="" href="../actions/">Client Actions</a>
+	    </li>
           
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../server/">Server Guide</a>
-        
-    </li>
-<li>
+            <li class="toctree-l1">
+		
+    <a class="" href="../server/">Server Guide</a>
+	    </li>
           
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../development/">Development Tips</a>
-        
-    </li>
-<li>
+            <li class="toctree-l1">
+		
+    <a class="" href="../development/">Development Tips</a>
+	    </li>
           
-            <li>
-    <li class="toctree-l1 current">
-        <a class="current" href="./">Example Setup</a>
-        
-            <ul>
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">Example Setup</a>
+    <ul class="subnav">
             
-                <li class="toctree-l3"><a href="#mainlua">main.lua</a></li>
-                
-            
-            </ul>
-        
-    </li>
-<li>
+    <li class="toctree-l2"><a href="#mainlua">main.lua</a></li>
+    
+
+    </ul>
+	    </li>
           
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../about/">About</a>
-        
-    </li>
-<li>
+            <li class="toctree-l1">
+		
+    <a class="" href="../about/">About</a>
+	    </li>
           
         </ul>
       </div>
@@ -145,88 +130,87 @@
 <p>What follows is a complete set up of all <strong>Coronium ChatterBox</strong> events and associated listeners.</p>
 <p>To learn more about the properties contained in each event see <a href="../events">Client Events</a>.</p>
 <hr />
-<div class="codehilite"><pre><span></span><span class="kd">local</span> <span class="n">cb</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s1">&#39;chatterbox.client&#39;</span><span class="p">)</span>
+<pre class="codehilite"><code class="language-lua">local cb = require('plugin.chatterbox')
 
-<span class="c1">--#############################################################</span>
-<span class="c1">--# Listeners</span>
-<span class="c1">--#############################################################</span>
+--#############################################################
+--# Listeners
+--#############################################################
 
-<span class="kd">local</span> <span class="kr">function</span> <span class="nf">onConnect</span><span class="p">()</span>
-  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Connected&#39;</span><span class="p">)</span>
-<span class="kr">end</span>
+local function onConnect()
+  print('Connected')
+end
 
-<span class="kd">local</span> <span class="kr">function</span> <span class="nf">onJoined</span><span class="p">(</span> <span class="n">evt</span> <span class="p">)</span>
-  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Client Joined&#39;</span><span class="p">)</span>
-<span class="kr">end</span>
+local function onJoined( evt )
+  print('Client Joined')
+end
 
-<span class="kd">local</span> <span class="kr">function</span> <span class="nf">onLeft</span><span class="p">(</span> <span class="n">evt</span> <span class="p">)</span>
-  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Client Left&#39;</span><span class="p">)</span>
-<span class="kr">end</span>
+local function onLeft( evt )
+  print('Client Left')
+end
 
-<span class="kd">local</span> <span class="kr">function</span> <span class="nf">onMessage</span><span class="p">(</span> <span class="n">evt</span> <span class="p">)</span>
-  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Got Message&#39;</span><span class="p">)</span>
-<span class="kr">end</span>
+local function onMessage( evt )
+  print('Got Message')
+end
 
-<span class="kd">local</span> <span class="kr">function</span> <span class="nf">onWhisper</span><span class="p">(</span> <span class="n">evt</span> <span class="p">)</span>
-  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Got Whisper&#39;</span><span class="p">)</span>
-<span class="kr">end</span>
+local function onWhisper( evt )
+  print('Got Whisper')
+end
 
-<span class="kd">local</span> <span class="kr">function</span> <span class="nf">onSystemMessage</span><span class="p">(</span> <span class="n">evt</span> <span class="p">)</span>
-  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Got System Message&#39;</span><span class="p">)</span>
-<span class="kr">end</span>
+local function onSystemMessage( evt )
+  print('Got System Message')
+end
 
-<span class="kd">local</span> <span class="kr">function</span> <span class="nf">onClientList</span><span class="p">(</span> <span class="n">evt</span> <span class="p">)</span>
-  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Got Client List&#39;</span><span class="p">)</span>
-<span class="kr">end</span>
+local function onClientList( evt )
+  print('Got Client List')
+end
 
-<span class="kd">local</span> <span class="kr">function</span> <span class="nf">onRoomList</span><span class="p">(</span> <span class="n">evt</span> <span class="p">)</span>
-  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Got Room List&#39;</span><span class="p">)</span>
-<span class="kr">end</span>
+local function onRoomList( evt )
+  print('Got Room List')
+end
 
-<span class="kd">local</span> <span class="kr">function</span> <span class="nf">onNameChange</span><span class="p">(</span> <span class="n">evt</span> <span class="p">)</span>
-  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Name Changed&#39;</span><span class="p">)</span>
-<span class="kr">end</span>
+local function onNameChange( evt )
+  print('Name Changed')
+end
 
-<span class="kd">local</span> <span class="kr">function</span> <span class="nf">onUnknownEvent</span><span class="p">(</span> <span class="n">evt</span> <span class="p">)</span>
-  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Unknown Event&#39;</span><span class="p">)</span>
-<span class="kr">end</span>
+local function onUnknownEvent( evt )
+  print('Unknown Event')
+end
 
-<span class="kd">local</span> <span class="kr">function</span> <span class="nf">onTimeout</span><span class="p">()</span>
-  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Timed Out&#39;</span><span class="p">)</span>
-<span class="kr">end</span>
+local function onTimeout()
+  print('Timed Out')
+end
 
-<span class="kd">local</span> <span class="kr">function</span> <span class="nf">onClosed</span><span class="p">()</span>
-  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Disconnected&#39;</span><span class="p">)</span>
-<span class="kr">end</span>
+local function onClosed()
+  print('Disconnected')
+end
 
-<span class="kd">local</span> <span class="kr">function</span> <span class="nf">onError</span><span class="p">(</span> <span class="n">evt</span> <span class="p">)</span>
-  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Error&#39;</span><span class="p">)</span>
-<span class="kr">end</span>
+local function onError( evt )
+  print('Error')
+end
 
-<span class="c1">--#############################################################</span>
-<span class="c1">--# Events</span>
-<span class="c1">--#############################################################</span>
+--#############################################################
+--# Events
+--#############################################################
 
-<span class="n">cb</span><span class="p">.</span><span class="n">events</span><span class="p">:</span><span class="n">addEventListener</span><span class="p">(</span><span class="s1">&#39;OnConnect&#39;</span><span class="p">,</span> <span class="n">onConnect</span><span class="p">)</span>
-<span class="n">cb</span><span class="p">.</span><span class="n">events</span><span class="p">:</span><span class="n">addEventListener</span><span class="p">(</span><span class="s1">&#39;OnJoined&#39;</span><span class="p">,</span> <span class="n">onJoined</span><span class="p">)</span>
-<span class="n">cb</span><span class="p">.</span><span class="n">events</span><span class="p">:</span><span class="n">addEventListener</span><span class="p">(</span><span class="s1">&#39;OnLeft&#39;</span><span class="p">,</span> <span class="n">onLeft</span><span class="p">)</span>
-<span class="n">cb</span><span class="p">.</span><span class="n">events</span><span class="p">:</span><span class="n">addEventListener</span><span class="p">(</span><span class="s1">&#39;OnMessage&#39;</span><span class="p">,</span> <span class="n">onMessage</span><span class="p">)</span>
-<span class="n">cb</span><span class="p">.</span><span class="n">events</span><span class="p">:</span><span class="n">addEventListener</span><span class="p">(</span><span class="s1">&#39;OnWhisper&#39;</span><span class="p">,</span> <span class="n">onWhisper</span><span class="p">)</span>
-<span class="n">cb</span><span class="p">.</span><span class="n">events</span><span class="p">:</span><span class="n">addEventListener</span><span class="p">(</span><span class="s1">&#39;OnSystemMessage&#39;</span><span class="p">,</span> <span class="n">onSystemMessage</span><span class="p">)</span>
-<span class="n">cb</span><span class="p">.</span><span class="n">events</span><span class="p">:</span><span class="n">addEventListener</span><span class="p">(</span><span class="s1">&#39;OnClientList&#39;</span><span class="p">,</span> <span class="n">onClientList</span><span class="p">)</span>
-<span class="n">cb</span><span class="p">.</span><span class="n">events</span><span class="p">:</span><span class="n">addEventListener</span><span class="p">(</span><span class="s1">&#39;OnRoomList&#39;</span><span class="p">,</span> <span class="n">onRoomList</span><span class="p">)</span>
-<span class="n">cb</span><span class="p">.</span><span class="n">events</span><span class="p">:</span><span class="n">addEventListener</span><span class="p">(</span><span class="s1">&#39;OnNameChange&#39;</span><span class="p">,</span> <span class="n">onNameChange</span><span class="p">)</span>
-<span class="n">cb</span><span class="p">.</span><span class="n">events</span><span class="p">:</span><span class="n">addEventListener</span><span class="p">(</span><span class="s1">&#39;OnUnknownEvent&#39;</span><span class="p">,</span> <span class="n">onUnknownEvent</span><span class="p">)</span>
-<span class="n">cb</span><span class="p">.</span><span class="n">events</span><span class="p">:</span><span class="n">addEventListener</span><span class="p">(</span><span class="s1">&#39;OnClosed&#39;</span><span class="p">,</span> <span class="n">onClosed</span><span class="p">)</span>
-<span class="n">cb</span><span class="p">.</span><span class="n">events</span><span class="p">:</span><span class="n">addEventListener</span><span class="p">(</span><span class="s1">&#39;OnTimeout&#39;</span><span class="p">,</span> <span class="n">onTimeout</span><span class="p">)</span>
-<span class="n">cb</span><span class="p">.</span><span class="n">events</span><span class="p">:</span><span class="n">addEventListener</span><span class="p">(</span><span class="s1">&#39;OnError&#39;</span><span class="p">,</span> <span class="n">onError</span><span class="p">)</span>
+cb.events:addEventListener('OnConnect', onConnect)
+cb.events:addEventListener('OnJoined', onJoined)
+cb.events:addEventListener('OnLeft', onLeft)
+cb.events:addEventListener('OnMessage', onMessage)
+cb.events:addEventListener('OnWhisper', onWhisper)
+cb.events:addEventListener('OnSystemMessage', onSystemMessage)
+cb.events:addEventListener('OnClientList', onClientList)
+cb.events:addEventListener('OnRoomList', onRoomList)
+cb.events:addEventListener('OnNameChange', onNameChange)
+cb.events:addEventListener('OnUnknownEvent', onUnknownEvent)
+cb.events:addEventListener('OnClosed', onClosed)
+cb.events:addEventListener('OnTimeout', onTimeout)
+cb.events:addEventListener('OnError', onError)
 
-<span class="n">cb</span><span class="p">:</span><span class="n">start</span><span class="p">({</span>
-  <span class="n">host</span>  <span class="o">=</span> <span class="s1">&#39;&lt;your-instance-ip&gt;&#39;</span><span class="p">,</span>
-  <span class="n">key</span>   <span class="o">=</span> <span class="s1">&#39;&lt;your-instance-key&gt;&#39;</span><span class="p">,</span> 
-  <span class="n">name</span>  <span class="o">=</span> <span class="s2">&quot;Timmy&quot;</span>
-<span class="p">})</span>
-</pre></div>
+cb:connect({
+  host  = '&lt;your-instance-ip&gt;',
+  key   = '&lt;your-instance-key&gt;', 
+  name  = &quot;Timmy&quot;
+})</code></pre>
               
             </div>
           </div>

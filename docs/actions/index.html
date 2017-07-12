@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="../css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
   <link rel="stylesheet" href="../css/highlight.css">
+  <link href="../css/code.css" rel="stylesheet">
   
   <script>
     // Current page data
@@ -45,87 +46,75 @@
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
 	<ul class="current">
+	  
           
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="..">Introduction</a>
-        
-    </li>
-<li>
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Introduction</a>
+	    </li>
           
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../guide/">Client Guide</a>
-        
-    </li>
-<li>
+            <li class="toctree-l1">
+		
+    <a class="" href="../guide/">Client Guide</a>
+	    </li>
           
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../events/">Client Events</a>
-        
-    </li>
-<li>
+            <li class="toctree-l1">
+		
+    <a class="" href="../events/">Client Events</a>
+	    </li>
           
-            <li>
-    <li class="toctree-l1 current">
-        <a class="current" href="./">Client Actions</a>
-        
-            <ul>
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">Client Actions</a>
+    <ul class="subnav">
             
-                <li class="toctree-l3"><a href="#action-table">Action Table</a></li>
-                
-                    <li><a class="toctree-l4" href="#changename">changeName</a></li>
-                
-                    <li><a class="toctree-l4" href="#disconnect">disconnect</a></li>
-                
-                    <li><a class="toctree-l4" href="#getid">getId</a></li>
-                
-                    <li><a class="toctree-l4" href="#getroomlist">getRoomList</a></li>
-                
-                    <li><a class="toctree-l4" href="#getname">getName</a></li>
-                
-                    <li><a class="toctree-l4" href="#joinroom">joinRoom</a></li>
-                
-                    <li><a class="toctree-l4" href="#sendmessage">sendMessage</a></li>
-                
-                    <li><a class="toctree-l4" href="#sendsystemmessage">sendSystemMessage</a></li>
-                
-                    <li><a class="toctree-l4" href="#sendwhisper">sendWhisper</a></li>
-                
-            
-            </ul>
+    <li class="toctree-l2"><a href="#action-table">Action Table</a></li>
+    
+        <ul>
         
-    </li>
-<li>
+            <li><a class="toctree-l3" href="#changename">changeName</a></li>
+        
+            <li><a class="toctree-l3" href="#disconnect">disconnect</a></li>
+        
+            <li><a class="toctree-l3" href="#getid">getId</a></li>
+        
+            <li><a class="toctree-l3" href="#getroomlist">getRoomList</a></li>
+        
+            <li><a class="toctree-l3" href="#getname">getName</a></li>
+        
+            <li><a class="toctree-l3" href="#joinroom">joinRoom</a></li>
+        
+            <li><a class="toctree-l3" href="#sendmessage">sendMessage</a></li>
+        
+            <li><a class="toctree-l3" href="#sendsystemmessage">sendSystemMessage</a></li>
+        
+            <li><a class="toctree-l3" href="#sendwhisper">sendWhisper</a></li>
+        
+        </ul>
+    
+
+    </ul>
+	    </li>
           
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../server/">Server Guide</a>
-        
-    </li>
-<li>
+            <li class="toctree-l1">
+		
+    <a class="" href="../server/">Server Guide</a>
+	    </li>
           
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../development/">Development Tips</a>
-        
-    </li>
-<li>
+            <li class="toctree-l1">
+		
+    <a class="" href="../development/">Development Tips</a>
+	    </li>
           
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../example/">Example Setup</a>
-        
-    </li>
-<li>
+            <li class="toctree-l1">
+		
+    <a class="" href="../example/">Example Setup</a>
+	    </li>
           
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../about/">About</a>
-        
-    </li>
-<li>
+            <li class="toctree-l1">
+		
+    <a class="" href="../about/">About</a>
+	    </li>
           
         </ul>
       </div>
@@ -170,47 +159,47 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="#joinroom"><code>joinRoom</code></a></td>
+<td><strong><a href="#joinroom">joinRoom</a></strong></td>
 <td>Join a room.</td>
 <td><em>client</em></td>
 </tr>
 <tr>
-<td><a href="#sendmessage"><code>sendMessage</code></a></td>
+<td><strong><a href="#sendmessage">sendMessage</a></strong></td>
 <td>Send a message to the room.</td>
 <td><em>room</em></td>
 </tr>
 <tr>
-<td><a href="#sendwhisper"><code>sendWhisper</code></a></td>
+<td><strong><a href="#sendwhisper">sendWhisper</a></strong></td>
 <td>Send a private message to a client.</td>
 <td><em>client</em></td>
 </tr>
 <tr>
-<td><a href="#sendsystemmessage"><code>sendSystemMessage</code></a></td>
+<td><strong><a href="#sendsystemmessage">sendSystemMessage</a></strong></td>
 <td>Send a system message to the room.</td>
 <td><em>room</em></td>
 </tr>
 <tr>
-<td><a href="#changename"><code>changeName</code></a></td>
+<td><strong><a href="#changename">changeName</a></strong></td>
 <td>Change the client name.</td>
 <td><em>client</em></td>
 </tr>
 <tr>
-<td><a href="#getroomlist"><code>getRoomList</code></a></td>
+<td><strong><a href="#getroomlist">getRoomList</a></strong></td>
 <td>Get a list of active rooms from the server.</td>
 <td><em>client</em></td>
 </tr>
 <tr>
-<td><a href="#getid"><code>getId</code></a></td>
+<td><strong><a href="#getid">getId</a></strong></td>
 <td>Get the client unique ID.</td>
 <td><em>client</em></td>
 </tr>
 <tr>
-<td><a href="#getname"><code>getName</code></a></td>
+<td><strong><a href="#getname">getName</a></strong></td>
 <td>Get the client name.</td>
 <td><em>client</em></td>
 </tr>
 <tr>
-<td><a href="#disconnect"><code>disconnect</code></a></td>
+<td><strong><a href="#disconnect">disconnect</a></strong></td>
 <td>Disconnect the client from the server.</td>
 <td><em>client</em></td>
 </tr>
@@ -230,43 +219,34 @@
 </thead>
 <tbody>
 <tr>
-<td><code>name</code></td>
+<td><strong>name</strong></td>
 <td>The new client name.</td>
 <td>String</td>
 </tr>
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<div class="codehilite"><pre><span></span><span class="kd">local</span> <span class="n">cb</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s1">&#39;chatterbox.client&#39;</span><span class="p">)</span>
-
-<span class="n">cb</span><span class="p">:</span><span class="n">changeName</span><span class="p">(</span> <span class="s1">&#39;Marco&#39;</span> <span class="p">)</span>
-</pre></div>
+<pre class="codehilite"><code class="language-lua">cb:changeName( 'Marco' )</code></pre>
 
 
-<p><strong>See also:</strong> <a href="../events/#onnamechange"><code>OnNameChange</code></a> event.</p>
+<p><em>See also:</em> <strong><a href="../events/#onnamechange">OnNameChange</a></strong> event.</p>
 <hr />
 <h3 id="disconnect">disconnect</h3>
 <p>Disconnect the client from the server.</p>
 <p><strong>Action Parameters</strong></p>
 <p><em>This action has no parameters.</em></p>
 <p><strong>Example</strong></p>
-<div class="codehilite"><pre><span></span><span class="kd">local</span> <span class="n">cb</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s1">&#39;chatterbox.client&#39;</span><span class="p">)</span>
-
-<span class="n">cb</span><span class="p">:</span><span class="n">disconnect</span><span class="p">()</span>
-</pre></div>
+<pre class="codehilite"><code class="language-lua">cb:disconnect()</code></pre>
 
 
-<p><strong>See also:</strong> <a href="../events/#onclosed"><code>OnClosed</code></a> event.</p>
+<p><em>See also:</em> <strong><a href="../events/#onclosed">OnClosed</a></strong> event.</p>
 <hr />
 <h3 id="getid">getId</h3>
 <p>Get the clients unique identifier.</p>
 <p><strong>Action Parameters</strong></p>
 <p><em>This action has no parameters.</em></p>
 <p><strong>Example</strong></p>
-<div class="codehilite"><pre><span></span><span class="kd">local</span> <span class="n">cb</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s1">&#39;chatterbox.client&#39;</span><span class="p">)</span>
-
-<span class="kd">local</span> <span class="n">id</span> <span class="o">=</span> <span class="n">cb</span><span class="p">:</span><span class="n">getId</span><span class="p">()</span>
-</pre></div>
+<pre class="codehilite"><code class="language-lua">local id = cb:getId()</code></pre>
 
 
 <hr />
@@ -275,23 +255,17 @@
 <p><strong>Action Parameters</strong></p>
 <p><em>This action has no parameters.</em></p>
 <p><strong>Example</strong></p>
-<div class="codehilite"><pre><span></span><span class="kd">local</span> <span class="n">cb</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s1">&#39;chatterbox.client&#39;</span><span class="p">)</span>
-
-<span class="kd">local</span> <span class="n">name</span> <span class="o">=</span> <span class="n">cb</span><span class="p">:</span><span class="n">getRoomList</span><span class="p">()</span>
-</pre></div>
+<pre class="codehilite"><code class="language-lua">local name = cb:getRoomList()</code></pre>
 
 
-<p><strong>See also:</strong> <a href="../events/#onroomlist"><code>OnRoomList</code></a> event.</p>
+<p><em>See also:</em> <strong><a href="../events/#onroomlist">OnRoomList</a></strong> event.</p>
 <hr />
 <h3 id="getname">getName</h3>
 <p>Get the clients name.</p>
 <p><strong>Action Parameters</strong></p>
 <p><em>This action has no parameters.</em></p>
 <p><strong>Example</strong></p>
-<div class="codehilite"><pre><span></span><span class="kd">local</span> <span class="n">cb</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s1">&#39;chatterbox.client&#39;</span><span class="p">)</span>
-
-<span class="kd">local</span> <span class="n">name</span> <span class="o">=</span> <span class="n">cb</span><span class="p">:</span><span class="n">getName</span><span class="p">()</span>
-</pre></div>
+<pre class="codehilite"><code class="language-lua">local name = cb:getName()</code></pre>
 
 
 <hr />
@@ -312,20 +286,17 @@
 </thead>
 <tbody>
 <tr>
-<td><code>room</code></td>
+<td><strong>room</strong></td>
 <td>The room ID to join.</td>
 <td>String</td>
 </tr>
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<div class="codehilite"><pre><span></span><span class="kd">local</span> <span class="n">cb</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s1">&#39;chatterbox.client&#39;</span><span class="p">)</span>
-
-<span class="n">cb</span><span class="p">:</span><span class="n">joinRoom</span><span class="p">(</span> <span class="s1">&#39;GameOne&#39;</span> <span class="p">)</span>
-</pre></div>
+<pre class="codehilite"><code class="language-lua">cb:joinRoom( 'GameOne' )</code></pre>
 
 
-<p><strong>See also:</strong> <a href="../events/#onjoined"><code>OnJoined</code></a> event.</p>
+<p><em>See also:</em> <strong><a href="../events/#onjoined">OnJoined</a></strong> event.</p>
 <hr />
 <h3 id="sendmessage">sendMessage</h3>
 <p>Send a message to the room.</p>
@@ -348,20 +319,17 @@
 </thead>
 <tbody>
 <tr>
-<td><code>message</code></td>
+<td><strong>message</strong></td>
 <td>The message content.</td>
 <td>String</td>
 </tr>
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<div class="codehilite"><pre><span></span><span class="kd">local</span> <span class="n">cb</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s1">&#39;chatterbox.client&#39;</span><span class="p">)</span>
-
-<span class="n">cb</span><span class="p">:</span><span class="n">sendMessage</span><span class="p">(</span> <span class="s1">&#39;Hello people!&#39;</span> <span class="p">)</span>
-</pre></div>
+<pre class="codehilite"><code class="language-lua">cb:sendMessage( 'Hello people!' )</code></pre>
 
 
-<p><strong>See also:</strong> <a href="../events/#onmessage"><code>OnMessage</code></a> event.</p>
+<p><em>See also:</em> <strong><a href="../events/#onmessage">OnMessage</a></strong> event.</p>
 <hr />
 <h3 id="sendsystemmessage">sendSystemMessage</h3>
 <p>Send a system message to the room.</p>
@@ -380,25 +348,22 @@
 </thead>
 <tbody>
 <tr>
-<td><code>action</code></td>
+<td><strong>action</strong></td>
 <td>The system action ID.</td>
 <td>String</td>
 </tr>
 <tr>
-<td><code>payload</code></td>
+<td><strong>payload</strong></td>
 <td>The action payload.</td>
 <td>Table</td>
 </tr>
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<div class="codehilite"><pre><span></span><span class="kd">local</span> <span class="n">cb</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s1">&#39;chatterbox.client&#39;</span><span class="p">)</span>
-
-<span class="n">cb</span><span class="p">:</span><span class="n">sendSystemMessage</span><span class="p">(</span> <span class="s1">&#39;player_turn&#39;</span><span class="p">,</span> <span class="p">{</span><span class="n">turn</span> <span class="o">=</span> <span class="mi">1</span><span class="p">}</span> <span class="p">)</span>
-</pre></div>
+<pre class="codehilite"><code class="language-lua">cb:sendSystemMessage( 'player_turn', {turn = 1} )</code></pre>
 
 
-<p><strong>See also:</strong> <a href="../events/#onsystemmessage"><code>OnSystemMessage</code></a> event.</p>
+<p><em>See also:</em> <strong><a href="../events/#onsystemmessage">OnSystemMessage</a></strong> event.</p>
 <hr />
 <h3 id="sendwhisper">sendWhisper</h3>
 <p>Send a private message to a client.</p>
@@ -421,29 +386,26 @@
 </thead>
 <tbody>
 <tr>
-<td><code>message</code></td>
+<td><strong>message</strong></td>
 <td>The message content.</td>
 <td>String</td>
 </tr>
 <tr>
-<td><code>to_id</code></td>
+<td><strong>to_id</strong></td>
 <td>The recipient ID.</td>
 <td>String</td>
 </tr>
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<div class="codehilite"><pre><span></span><span class="kd">local</span> <span class="n">cb</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s1">&#39;chatterbox.client&#39;</span><span class="p">)</span>
-
-<span class="n">cb</span><span class="p">:</span><span class="n">sendWhisper</span><span class="p">(</span> <span class="s1">&#39;Hello you!&#39;</span><span class="p">,</span> <span class="s1">&#39;b697869e-5e07-4a91-89bd-1c737123cae2&#39;</span> <span class="p">)</span>
-</pre></div>
+<pre class="codehilite"><code class="language-lua">cb:sendWhisper( 'Hello you!', 'b697869e-5e07-4a91-89bd-1c737123cae2' )</code></pre>
 
 
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>You can obtain a recipient ID from the client list. See the <a href="../events/#onclientlist">OnClientList</a> event.</p>
 </div>
-<p><strong>See also:</strong> <a href="../events/#onwhisper"><code>OnWhisper</code></a> event.</p>
+<p><em>See also:</em> <strong><a href="../events/#onwhisper">OnWhisper</a></strong> event.</p>
               
             </div>
           </div>

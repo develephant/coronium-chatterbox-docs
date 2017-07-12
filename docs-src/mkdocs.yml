@@ -12,6 +12,8 @@ copyright: "&copy;2017 C. Byerley - develephant.com"
 theme: readthedocs
 site_url: https://develephant.github.io/coronium-cs-docs
 site_dir: ../docs
+extra_css: 
+  - css/code.css
 markdown_extensions:
   - admonition
   - codehilite

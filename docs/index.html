@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="./css/theme.css" type="text/css" />
   <link rel="stylesheet" href="./css/theme_extra.css" type="text/css" />
   <link rel="stylesheet" href="./css/highlight.css">
+  <link href="./css/code.css" rel="stylesheet">
   
   <script>
     // Current page data
@@ -45,71 +46,59 @@
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
 	<ul class="current">
+	  
           
-            <li>
-    <li class="toctree-l1 current">
-        <a class="current" href=".">Introduction</a>
-        
-            <ul>
+            <li class="toctree-l1 current">
+		
+    <a class="current" href=".">Introduction</a>
+    <ul class="subnav">
             
-                <li class="toctree-l3"><a href="#coronium-chatterbox">Coronium ChatterBox</a></li>
-                
-                    <li><a class="toctree-l4" href="#installation">Installation</a></li>
-                
-            
-            </ul>
+    <li class="toctree-l2"><a href="#coronium-chatterbox">Coronium ChatterBox</a></li>
+    
+        <ul>
         
-    </li>
-<li>
+            <li><a class="toctree-l3" href="#installation">Installation</a></li>
+        
+        </ul>
+    
+
+    </ul>
+	    </li>
           
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="guide/">Client Guide</a>
-        
-    </li>
-<li>
+            <li class="toctree-l1">
+		
+    <a class="" href="guide/">Client Guide</a>
+	    </li>
           
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="events/">Client Events</a>
-        
-    </li>
-<li>
+            <li class="toctree-l1">
+		
+    <a class="" href="events/">Client Events</a>
+	    </li>
           
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="actions/">Client Actions</a>
-        
-    </li>
-<li>
+            <li class="toctree-l1">
+		
+    <a class="" href="actions/">Client Actions</a>
+	    </li>
           
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="server/">Server Guide</a>
-        
-    </li>
-<li>
+            <li class="toctree-l1">
+		
+    <a class="" href="server/">Server Guide</a>
+	    </li>
           
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="development/">Development Tips</a>
-        
-    </li>
-<li>
+            <li class="toctree-l1">
+		
+    <a class="" href="development/">Development Tips</a>
+	    </li>
           
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="example/">Example Setup</a>
-        
-    </li>
-<li>
+            <li class="toctree-l1">
+		
+    <a class="" href="example/">Example Setup</a>
+	    </li>
           
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="about/">About</a>
-        
-    </li>
-<li>
+            <li class="toctree-l1">
+		
+    <a class="" href="about/">About</a>
+	    </li>
           
         </ul>
       </div>
@@ -184,8 +173,7 @@
 <p class="admonition-title">Tip</p>
 <p>You can use the built in shells on both OSX and Linux. For Windows, check out <strong><a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html">PuTTY</a></strong>.</p>
 </div>
-<div class="codehilite"><pre><span></span>ssh root@&lt;your-instance-ip&gt;
-</pre></div>
+<pre class="codehilite"><code>ssh root@&lt;your-instance-ip&gt;</code></pre>
 
 
 <p><em>Replace <strong>&lt;your-instance-ip></strong> with the address that was assigned to your droplet.</em></p>
@@ -193,13 +181,11 @@
 <p><code>curl -LO https://s3.amazonaws.com/coronium-cb/cb.sh &amp;&amp; sudo bash ./cb.sh &amp;&amp; rm cb.sh</code></p>
 <p>Once the installation is complete, <strong>Coronium ChatterBox</strong> is ready for connections. Log out of the server by typing <strong>exit</strong> on the command line.</p>
 <p>You can now test the server connection using <strong>telnet</strong> on your local command prompt:</p>
-<div class="codehilite"><pre><span></span>telnet &lt;your-instance-ip&gt; 7175
-</pre></div>
+<pre class="codehilite"><code>telnet &lt;your-instance-ip&gt; 7175</code></pre>
 
 
 <p>The server should repond with a "handshake" prompt:</p>
-<div class="codehilite"><pre><span></span>{&quot;_handshake&quot;:1}
-</pre></div>
+<pre class="codehilite"><code>{&quot;_handshake&quot;:1}</code></pre>
 
 
 <div class="admonition tip">
@@ -207,8 +193,7 @@
 <p>The server will disconnect any client who does not properly respond to a handshake request after 5 seconds.</p>
 </div>
 <p>If you need to edit the config, view logs, etc. then log in with the <strong>coronium</strong> user.</p>
-<div class="codehilite"><pre><span></span>ssh coronium@&lt;your-instance-ip&gt;
-</pre></div>
+<pre class="codehilite"><code>ssh coronium@&lt;your-instance-ip&gt;</code></pre>
 
 
 <div class="admonition note">
@@ -266,6 +251,6 @@
 </html>
 
 <!--
-MkDocs version : 0.16.1
-Build Date UTC : 2017-07-11 22:39:50
+MkDocs version : 0.16.3
+Build Date UTC : 2017-07-12 07:10:52
 -->

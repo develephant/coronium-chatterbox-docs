@@ -2,7 +2,7 @@
 
 Events can be registered to different listeners to take action on them. In almost all cases, there should only be one listener for an event at any given time. This means you will need to be mindful of "removing" a listener when appropiate.
 
-To remove an event listener use `removeEventListener`:
+To remove an event listener use __removeEventListener__:
 
 ```lua
 cb.events:removeEventListener('OnJoined', onJoined)
@@ -23,11 +23,11 @@ When a client connects to a room, it's possible for two (or more) clients to hav
 
 ## System Messages
 
-System messages can facilitate more complex applications. A system message contains two properties, an `action` and `payload`. Using this message type allows you to control your application without having to parse through "chat" based messages.
+System messages can facilitate more complex applications. A system message contains two properties, an __action__ and __payload__. Using this message type allows you to control your application without having to parse through "chat" based messages.
 
-The `action` property should be a unique key that you can check for on the [OnSystemMessage](events#onsystemmessage) event. The `payload` is any data required for that action. It can be a simple value, or a complex data table.
+The __action__ property should be a unique key that you can check for on the [OnSystemMessage](events#onsystemmessage) event. The __payload__ is any data required for that action. It can be a simple value, or a complex data table.
 
-By listening for system messages, and checking the `action` key you can implement limitless functionality:
+By listening for system messages, and checking the __action__ key you can implement limitless functionality:
 
 ```lua
 local cb = require('chatterbox.client')

@@ -2,15 +2,15 @@
 
 |Action Name|Description|Scope|
 |-----------|-----------|-----|
-|[`joinRoom`](#joinroom)|Join a room.|_client_|
-|[`sendMessage`](#sendmessage)|Send a message to the room.|_room_|
-|[`sendWhisper`](#sendwhisper)|Send a private message to a client.|_client_|
-|[`sendSystemMessage`](#sendsystemmessage)|Send a system message to the room.|_room_|
-|[`changeName`](#changename)|Change the client name.|_client_|
-|[`getRoomList`](#getroomlist)|Get a list of active rooms from the server.|_client_|
-|[`getId`](#getid)|Get the client unique ID.|_client_|
-|[`getName`](#getname)|Get the client name.|_client_|
-|[`disconnect`](#disconnect)|Disconnect the client from the server.|_client_|
+|__[joinRoom](#joinroom)__|Join a room.|_client_|
+|__[sendMessage](#sendmessage)__|Send a message to the room.|_room_|
+|__[sendWhisper](#sendwhisper)__|Send a private message to a client.|_client_|
+|__[sendSystemMessage](#sendsystemmessage)__|Send a system message to the room.|_room_|
+|__[changeName](#changename)__|Change the client name.|_client_|
+|__[getRoomList](#getroomlist)__|Get a list of active rooms from the server.|_client_|
+|__[getId](#getid)__|Get the client unique ID.|_client_|
+|__[getName](#getname)__|Get the client name.|_client_|
+|__[disconnect](#disconnect)__|Disconnect the client from the server.|_client_|
 
 ---
 
@@ -22,17 +22,15 @@ __Action Parameters__
 
 |Parameters|Description|Type|
 |----------|-----------|----|
-|`name`|The new client name.|String|
+|__name__|The new client name.|String|
 
 __Example__
 
 ```lua
-local cb = require('chatterbox.client')
-
 cb:changeName( 'Marco' )
 ```
 
-__See also:__ [`OnNameChange`](events/#onnamechange) event.
+_See also:_ __[OnNameChange](events/#onnamechange)__ event.
 
 ---
 
@@ -47,12 +45,10 @@ _This action has no parameters._
 __Example__
 
 ```lua
-local cb = require('chatterbox.client')
-
 cb:disconnect()
 ```
 
-__See also:__ [`OnClosed`](events/#onclosed) event.
+_See also:_ __[OnClosed](events/#onclosed)__ event.
 
 ---
 
@@ -67,8 +63,6 @@ _This action has no parameters._
 __Example__
 
 ```lua
-local cb = require('chatterbox.client')
-
 local id = cb:getId()
 ```
 
@@ -85,12 +79,10 @@ _This action has no parameters._
 __Example__
 
 ```lua
-local cb = require('chatterbox.client')
-
 local name = cb:getRoomList()
 ```
 
-__See also:__ [`OnRoomList`](events/#onroomlist) event.
+_See also:_ __[OnRoomList](events/#onroomlist)__ event.
 
 ---
 
@@ -105,8 +97,6 @@ _This action has no parameters._
 __Example__
 
 ```lua
-local cb = require('chatterbox.client')
-
 local name = cb:getName()
 ```
 
@@ -123,17 +113,15 @@ __Action Parameters__
 
 |Parameters|Description|Type|
 |----------|-----------|----|
-|`room`|The room ID to join.|String|
+|__room__|The room ID to join.|String|
 
 __Example__
 
 ```lua
-local cb = require('chatterbox.client')
-
 cb:joinRoom( 'GameOne' )
 ```
 
-__See also:__ [`OnJoined`](events/#onjoined) event.
+_See also:_ __[OnJoined](events/#onjoined)__ event.
 
 ---
 
@@ -151,17 +139,15 @@ __Action Parameters__
 
 |Parameters|Description|Type|
 |----------|-----------|----|
-|`message`|The message content.|String|
+|__message__|The message content.|String|
 
 __Example__
 
 ```lua
-local cb = require('chatterbox.client')
-
 cb:sendMessage( 'Hello people!' )
 ```
 
-__See also:__ [`OnMessage`](events/#onmessage) event.
+_See also:_ __[OnMessage](events/#onmessage)__ event.
 
 ---
 
@@ -176,18 +162,16 @@ __Action Parameters__
 
 |Parameters|Description|Type|
 |----------|-----------|----|
-|`action`|The system action ID.|String|
-|`payload`|The action payload.|Table|
+|__action__|The system action ID.|String|
+|__payload__|The action payload.|Table|
 
 __Example__
 
 ```lua
-local cb = require('chatterbox.client')
-
 cb:sendSystemMessage( 'player_turn', {turn = 1} )
 ```
 
-__See also:__ [`OnSystemMessage`](events/#onsystemmessage) event.
+_See also:_ __[OnSystemMessage](events/#onsystemmessage)__ event.
 
 ---
 
@@ -205,18 +189,16 @@ __Action Parameters__
 
 |Parameters|Description|Type|
 |----------|-----------|----|
-|`message`|The message content.|String|
-|`to_id`|The recipient ID.|String|
+|__message__|The message content.|String|
+|__to_id__|The recipient ID.|String|
 
 __Example__
 
 ```lua
-local cb = require('chatterbox.client')
-
 cb:sendWhisper( 'Hello you!', 'b697869e-5e07-4a91-89bd-1c737123cae2' )
 ```
 
 !!! note
     You can obtain a recipient ID from the client list. See the [OnClientList](events/#onclientlist) event.
 
-__See also:__ [`OnWhisper`](events/#onwhisper) event.
+_See also:_ __[OnWhisper](events/#onwhisper)__ event.

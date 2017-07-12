@@ -33,10 +33,10 @@ The following configuration options are available to set on the server-side:
 
 |Name|Description|Default|
 |----|-----------|-------|
-|`key`|The client connection key.|"8477ebc412386117059664d45637e397"
-|`port`|The port that the client connects to.|7175
-|`room`|The default room the client joins, if not provided.|"Lobby"|
-|`timeout`|The global client timeout setting, in seconds.|900 (15 min)|
+|__key__|The client connection key.|"8477ebc412386117059664d45637e397"
+|__port__|The port that the client connects to.|7175
+|__room__|The default room the client joins, if not provided.|"Lobby"|
+|__timeout__|The global client timeout setting, in seconds.|900 (15 min)|
 
 To adjust the configuration options, you will need to log into the server via SFTP:
 
@@ -89,7 +89,7 @@ Your instance will now be using the new configuration options.
 To help protect from errant client connections, the server contains a key that must be matched with client connection call. If the key is incorrect or not provided, the connection will be closed. There is a default key baked into the client and the server, but you should change this at your convienence.
 
 !!! important
-    Once you change the server key, make sure to also update your client connection method by passing the `key` parameter, or you won't be able to connect. See [Connecting The Client](guide/#connecting-the-client).
+    Once you change the server key, make sure to also update your client connection method by passing the __key__ parameter, or you won't be able to connect. See [Connecting The Client](guide/#connecting-the-client).
 
 #### Port
 

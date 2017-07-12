@@ -2,19 +2,19 @@
 
 |Event Name|Description|Scope|
 |----------|-----------|-----|
-|[`OnConnect`](#onconnect)|The client has connected to the server.|_client_|
-|[`OnJoined`](#onjoined)|A client has joined the current room.|_room_|
-|[`OnLeft`](#onleft)|A client has left the current room.|_room_|
-|[`OnMessage`](#onmessage)|A room message has been received.|_room_|
-|[`OnWhisper`](#onwhisper)|A private message has been received.|_client_|
-|[`OnSystemMessage`](#onsystemmessage)|A system message has been received.|_room_|
-|[`OnClientList`](#onclientlist)|The client list of the current room.|_room_|
-|[`OnRoomList`](#onroomlist)|A list of rooms active on the server.|_client_|
-|[`OnNameChange`](#onnamechange)|A client has changed their name.|_room_|
-|[`OnUnknownEvent`](#onunknownevent)|An unknown event has been received.|_client_|
-|[`OnClosed`](#onclosed)|The client has disconnected from the server.|_client_|
-|[`OnTimeout`](#ontimeout)|The client connection has timed out.|_client_|
-|[`OnError`](#onerror)|The client has received an error message.|_client_|
+|__[OnConnect](#onconnect)__|The client has connected to the server.|_client_|
+|__[OnJoined](#onjoined)__|A client has joined the current room.|_room_|
+|__[OnLeft](#onleft)__|A client has left the current room.|_room_|
+|__[OnMessage](#onmessage)__|A room message has been received.|_room_|
+|__[OnWhisper](#onwhisper)__|A private message has been received.|_client_|
+|__[OnSystemMessage](#onsystemmessage)__|A system message has been received.|_room_|
+|__[OnClientList](#onclientlist)__|The client list of the current room.|_room_|
+|__[OnRoomList](#onroomlist)__|A list of rooms active on the server.|_client_|
+|__[OnNameChange](#onnamechange)__|A client has changed their name.|_room_|
+|__[OnUnknownEvent](#onunknownevent)__|An unknown event has been received.|_client_|
+|__[OnClosed](#onclosed)__|The client has disconnected from the server.|_client_|
+|__[OnTimeout](#ontimeout)__|The client connection has timed out.|_client_|
+|__[OnError](#onerror)__|The client has received an error message.|_client_|
 
 ---
 
@@ -23,8 +23,6 @@
 To listen for events, add an event listener:
 
 ```lua
-local cb = require('chatterbox.client')
-
 local function onMessage( evt )
   print(evt.data.name, evt.data.msg)
 end
@@ -33,7 +31,7 @@ cb.events:addEventListener('OnMessage', onMessage)
 ```
 
 !!! note
-    All event properties can be found on the `data` object of the event (`evt.data.<prop>`). See the following event details for their available properties.
+    All event properties can be found on the __data__ object of the event (__evt.data.<prop\>__). See the following event details for their available properties.
 
 ---
 
@@ -45,15 +43,13 @@ __Data Properties__
 
 |Property|Description|Type|
 |--------|-----------|----|
-|`clients`|A table array of clients.|Table|
-|`cnt`|The client list count.|Number|
-|`room`|The current room name.|String|
+|__clients__|A table array of clients.|Table|
+|__cnt__|The client list count.|Number|
+|__room__|The current room name.|String|
 
 __Example__
 
 ```lua
-local cb = require('chatterbox.client')
-
 local function onClientList( evt )
   print('client count:'..evt.data.cnt)
   local clients = evt.data.clients
@@ -77,8 +73,6 @@ __Data Properties__
 _This event has no available properties._
 
 ```lua
-local cb = require('chatterbox.client')
-
 local function onClosed()
   print('Client has disconnected from the server')
 end
@@ -99,8 +93,6 @@ _This event has no available properties._
 __Example__
 
 ```lua
-local cb = require('chatterbox.client')
-
 local function onConnect()
   print('Client has successfully connected to the server')
 end
@@ -115,16 +107,14 @@ cb.events:addEventListener('OnConnect', onConnect)
 The client has received an error message.
 
 !!! note
-    The `OnError` event triggers on both local and server-side errors.
+    The __OnError__ event triggers on both local and server-side errors.
 
 !!! important
-    The `OnError` event does not contain a `data` property. To access the error, use the `error` key directly on the event: `evt.error`.
+    The __OnError__ event does not contain a __data__ property. To access the error, use the __error__ key directly on the event: __evt.error__.
 
 __Example__
 
 ```lua
-local cb = require('chatterbox.client')
-
 local function OnError( evt )
   print('Client Error: '..evt.error)
 end
@@ -142,15 +132,13 @@ __Data Properties__
 
 |Property|Description|Type|
 |--------|-----------|----|
-|`name`|Name of the joining client.|String|
-|`id`|Unique ID of the client.|String|
-|`room`|The current room name.|String|
+|__name__|Name of the joining client.|String|
+|__id__|Unique ID of the client.|String|
+|__room__|The current room name.|String|
 
 __Example__
 
 ```lua
-local cb = require('chatterbox.client')
-
 local function onJoined( evt )
   print(evt.data.name, evt.data.id, evt.data.room)
 end
@@ -168,15 +156,13 @@ __Data Properties__
 
 |Property|Description|Type|
 |--------|-----------|----|
-|`name`|Name of the joining client.|String|
-|`id`|Unique ID of the client.|String|
-|`room`|The current room name.|String|
+|__name__|Name of the joining client.|String|
+|__id__|Unique ID of the client.|String|
+|__room__|The current room name.|String|
 
 __Example__
 
 ```lua
-local cb = require('chatterbox.client')
-
 local function onLeft( evt )
   print(evt.data.name, evt.data.id, evt.data.room)
 end
@@ -194,16 +180,14 @@ __Data Properties__
 
 |Property|Description|Type|
 |--------|-----------|----|
-|`name`|Name of the sender.|String|
-|`id`|Unique ID of the sender.|String|
-|`msg`|The message content.|String|
-|`room`|The current room name.|String|
+|__name__|Name of the sender.|String|
+|__id__|Unique ID of the sender.|String|
+|__msg__|The message content.|String|
+|__room__|The current room name.|String|
 
 __Example__
 
 ```lua
-local cb = require('chatterbox.client')
-
 local function onMessage( evt )
   print(evt.data.name, evt.data.msg)
 end
@@ -218,22 +202,20 @@ cb.events:addEventListener('OnMessage', onMessage)
 A client has changed their display name.
 
 !!! note
-    After this event is received an `OnClientList` event will follow with the updated name, allowing for easy updating of the client display list.
+    After this event is received an __OnClientList__ event will follow with the updated name, allowing for easy updating of the client display list.
 
 __Data Properties__
 
 |Property|Description|Type|
 |--------|-----------|----|
-|`name`|New name of the client.|String|
-|`old_name`|Previous name of the client.|String|
-|`id`|Unique ID of the client.|String|
-|`room`|The current room name.|String|
+|__name__|New name of the client.|String|
+|__old_name__|Previous name of the client.|String|
+|__id__|Unique ID of the client.|String|
+|__room__|The current room name.|String|
 
 __Example__
 
 ```lua
-local cb = require('chatterbox.client')
-
 local function onNameChange( evt )
   print('Old name was: '..evt.data.old_name)
   print('New name is: '..evt.data.name)
@@ -252,15 +234,13 @@ __Data Properties__
 
 |Property|Description|Type|
 |--------|-----------|----|
-|`rooms`|A table array of rooms names.|String|
-|`cnt`|The client list count.|String|
-|`room`|The current room name.|String|
+|__rooms__|A table array of rooms names.|String|
+|__cnt__|The client list count.|String|
+|__room__|The current room name.|String|
 
 __Example__
 
 ```lua
-local cb = require('chatterbox.client')
-
 local function onRoomList( evt )
   print('room count:'..evt.data.cnt)
   local rooms = evt.data.rooms
@@ -285,15 +265,13 @@ __Data Properties__
 
 |Property|Description|Type|
 |--------|-----------|----|
-|`action`|The system event action ID.|String|
-|`payload`|The system event payload.|Table|
-|`room`|The current room name.|String|
+|__action__|The system event action ID.|String|
+|__payload__|The system event payload.|Table|
+|__room__|The current room name.|String|
 
 __Example__
 
 ```lua
-local cb = require('chatterbox.client')
-
 local function onSystemMessage( evt )
   if evt.data.action == 'player_turn' then
     print('players turn is: '..evt.data.payload)
@@ -310,7 +288,7 @@ cb.events:addEventListener('OnSystemMessage', onSystemMessage)
 The client has timed out.
 
 !!! important
-    The timeout event is only a status message and does not disconnect the client. When the client receives this message you should use the `disconnect` action to close the connection, if wanted.
+    The timeout event is only a status message and does not disconnect the client. When the client receives this message you should use the __disconnect__ action to close the connection, if wanted.
 
 __Data Properties__
 
@@ -319,8 +297,6 @@ _This event has no available properties._
 __Example__
 
 ```lua
-local cb = require('chatterbox.client')
-
 local function onTimeout()
   print('The client has timed out')
 
@@ -347,8 +323,6 @@ _This event has no available properties._
 __Example__
 
 ```lua
-local cb = require('chatterbox.client')
-
 local function onUnkownEvent()
   print('An unknown event was received')
 end
@@ -369,16 +343,14 @@ __Data Properties__
 
 |Property|Description|Type|
 |--------|-----------|----|
-|`name`|Name of the sender.|String|
-|`id`|Unique ID of the sender.|String|
-|`msg`|The message content.|String|
-|`room`|The current room name.|String|
+|__name__|Name of the sender.|String|
+|__id__|Unique ID of the sender.|String|
+|__msg__|The message content.|String|
+|__room__|The current room name.|String|
 
 __Example__
 
 ```lua
-local cb = require('chatterbox.client')
-
 local function onWhisper( evt )
   print(evt.data.name, evt.data.msg)
 end

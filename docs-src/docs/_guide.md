@@ -1,33 +1,36 @@
-## Get The Plugin
+## Get The Client
 
-If you don't already have it, get the __Coronium Chatterbox Plugin__ from the __[Corona Marketplace](https://marketplace.coronalabs.com/)__.
+First point your browser to the __[Coronium Chatterbox Client repo](https://github.com/develephant/coronium-chatterbox-client)__.
 
+Next, click the __Clone or Download__ button and select __Download ZIP__.
 
-## Adding The Plugin
+![step09](imgs/step09.png)
 
-Add the plugin by adding an entry to the __plugins__ table of __build.settings__ file:
+Expand the __coronium-chatterbox-client-master.zip__ file and navigate into the __coronium-chatterbox-client-master__ directory.
+
+![step10](imgs/step10.png)
+
+Copy the __chatterbox__ directory to the root of your Corona project. Your project tree should look something like:
 
 ```
-settings =
-{
-    plugins =
-    {
-        ["plugin.chatterbox"] =
-        {
-            publisherId = "com.develephant"
-        },
-    },
-}
+CoronaProject/
+  main.lua
+  chatterbox
+  ...
 ```
+
+## Adding The Client
+
+Once you have the __chatterbox__ directory in your project, do the following to incorporate it.
 
 Open your __main.lua__ file and add the following:
 
 ```lua
-local cb = require('plugin.chatterbox')
+local cb = require('chatterbox.client')
 ```
 
 !!! note
-    If you are using Composer you may want to add this elsewhere.
+    If you are using Composer you may want to add this elsewhere. See the __project__ directory in the client download for an example.
 
 ## Connecting The Client
 
@@ -46,7 +49,7 @@ cb:connect({
 ### Connection Example
 
 ```lua
-local cb = require('plugin.chatterbox')
+local cb = require('chatterbox.client')
 
 local function onConnect()
   print('connected')

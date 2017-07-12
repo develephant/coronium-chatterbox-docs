@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="../css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
   <link rel="stylesheet" href="../css/highlight.css">
+  <link href="../css/code.css" rel="stylesheet">
   
   <script>
     // Current page data
@@ -45,90 +46,82 @@
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
 	<ul class="current">
+	  
           
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="..">Introduction</a>
-        
-    </li>
-<li>
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Introduction</a>
+	    </li>
           
-            <li>
-    <li class="toctree-l1 current">
-        <a class="current" href="./">Client Guide</a>
-        
-            <ul>
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">Client Guide</a>
+    <ul class="subnav">
             
-                <li class="toctree-l3"><a href="#get-the-client">Get The Client</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#adding-the-client">Adding The Client</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#connecting-the-client">Connecting The Client</a></li>
-                
-                    <li><a class="toctree-l4" href="#connection-example">Connection Example</a></li>
-                
-                    <li><a class="toctree-l4" href="#connection-parameters">Connection Parameters</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#client-overview">Client Overview</a></li>
-                
-                    <li><a class="toctree-l4" href="#rooms">Rooms</a></li>
-                
-                    <li><a class="toctree-l4" href="#client-list">Client List</a></li>
-                
-                    <li><a class="toctree-l4" href="#messages">Messages</a></li>
-                
-                    <li><a class="toctree-l4" href="#status-events">Status Events</a></li>
-                
-            
-            </ul>
+    <li class="toctree-l2"><a href="#get-the-plugin">Get The Plugin</a></li>
+    
+
+    <li class="toctree-l2"><a href="#adding-the-plugin">Adding The Plugin</a></li>
+    
+
+    <li class="toctree-l2"><a href="#connecting-the-client">Connecting The Client</a></li>
+    
+        <ul>
         
-    </li>
-<li>
+            <li><a class="toctree-l3" href="#connection-example">Connection Example</a></li>
+        
+            <li><a class="toctree-l3" href="#connection-parameters">Connection Parameters</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l2"><a href="#client-overview">Client Overview</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#rooms">Rooms</a></li>
+        
+            <li><a class="toctree-l3" href="#client-list">Client List</a></li>
+        
+            <li><a class="toctree-l3" href="#messages">Messages</a></li>
+        
+            <li><a class="toctree-l3" href="#status-events">Status Events</a></li>
+        
+        </ul>
+    
+
+    </ul>
+	    </li>
           
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../events/">Client Events</a>
-        
-    </li>
-<li>
+            <li class="toctree-l1">
+		
+    <a class="" href="../events/">Client Events</a>
+	    </li>
           
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../actions/">Client Actions</a>
-        
-    </li>
-<li>
+            <li class="toctree-l1">
+		
+    <a class="" href="../actions/">Client Actions</a>
+	    </li>
           
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../server/">Server Guide</a>
-        
-    </li>
-<li>
+            <li class="toctree-l1">
+		
+    <a class="" href="../server/">Server Guide</a>
+	    </li>
           
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../development/">Development Tips</a>
-        
-    </li>
-<li>
+            <li class="toctree-l1">
+		
+    <a class="" href="../development/">Development Tips</a>
+	    </li>
           
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../example/">Example Setup</a>
-        
-    </li>
-<li>
+            <li class="toctree-l1">
+		
+    <a class="" href="../example/">Example Setup</a>
+	    </li>
           
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../about/">About</a>
-        
-    </li>
-<li>
+            <li class="toctree-l1">
+		
+    <a class="" href="../about/">About</a>
+	    </li>
           
         </ul>
       </div>
@@ -162,30 +155,29 @@
           <div role="main">
             <div class="section">
               
-                <h2 id="get-the-client">Get The Client</h2>
-<p>First point your browser to the <strong><a href="https://github.com/develephant/coronium-chatterbox-client">Coronium Chatterbox Client repo</a></strong>.</p>
-<p>Next, click the <strong>Clone or Download</strong> button and select <strong>Download ZIP</strong>.</p>
-<p><img alt="step09" src="../imgs/step09.png" /></p>
-<p>Expand the <strong>coronium-chatterbox-client-master.zip</strong> file and navigate into the <strong>coronium-chatterbox-client-master</strong> directory.</p>
-<p><img alt="step10" src="../imgs/step10.png" /></p>
-<p>Copy the <strong>chatterbox</strong> directory to the root of your Corona project. Your project tree should look something like:</p>
-<div class="codehilite"><pre><span></span>CoronaProject/
-  main.lua
-  chatterbox
-  ...
-</pre></div>
+                <h2 id="get-the-plugin">Get The Plugin</h2>
+<p>If you don't already have it, get the <strong>Coronium Chatterbox Plugin</strong> from the <strong><a href="https://marketplace.coronalabs.com/">Corona Marketplace</a></strong>.</p>
+<h2 id="adding-the-plugin">Adding The Plugin</h2>
+<p>Add the plugin by adding an entry to the <strong>plugins</strong> table of <strong>build.settings</strong> file:</p>
+<pre class="codehilite"><code>settings =
+{
+    plugins =
+    {
+        [&quot;plugin.chatterbox&quot;] =
+        {
+            publisherId = &quot;com.develephant&quot;
+        },
+    },
+}</code></pre>
 
 
-<h2 id="adding-the-client">Adding The Client</h2>
-<p>Once you have the <strong>chatterbox</strong> directory in your project, do the following to incorporate it.</p>
 <p>Open your <strong>main.lua</strong> file and add the following:</p>
-<div class="codehilite"><pre><span></span><span class="kd">local</span> <span class="n">cb</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s1">&#39;chatterbox.client&#39;</span><span class="p">)</span>
-</pre></div>
+<pre class="codehilite"><code class="language-lua">local cb = require('plugin.chatterbox')</code></pre>
 
 
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If you are using Composer you may want to add this elsewhere. See the <strong>project</strong> directory in the client download for an example.</p>
+<p>If you are using Composer you may want to add this elsewhere.</p>
 </div>
 <h2 id="connecting-the-client">Connecting The Client</h2>
 <p>To connect to your <strong>Coronium Chatterbox</strong> instance, you will first need your IP address (see <a href="../#installation">Installation</a>) then add the following:</p>
@@ -193,39 +185,37 @@
 <p class="admonition-title">Note</p>
 <p>The code below shows the minimum parameters needed to connect to a fresh <strong>Coronium Chatterbox</strong> instance.</p>
 </div>
-<div class="codehilite"><pre><span></span><span class="n">cb</span><span class="p">:</span><span class="n">connect</span><span class="p">({</span>
-  <span class="n">host</span> <span class="o">=</span> <span class="s1">&#39;&lt;your-ip-address&gt;&#39;</span><span class="p">,</span>
-  <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Sandy&#39;</span>
-<span class="p">})</span>
-</pre></div>
+<pre class="codehilite"><code class="language-lua">cb:connect({
+  host = '&lt;your-ip-address&gt;',
+  name = 'Sandy'
+})</code></pre>
 
 
 <h3 id="connection-example">Connection Example</h3>
-<div class="codehilite"><pre><span></span><span class="kd">local</span> <span class="n">cb</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s1">&#39;chatterbox.client&#39;</span><span class="p">)</span>
+<pre class="codehilite"><code class="language-lua">local cb = require('plugin.chatterbox')
 
-<span class="kd">local</span> <span class="kr">function</span> <span class="nf">onConnect</span><span class="p">()</span>
-  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;connected&#39;</span><span class="p">)</span>
-<span class="kr">end</span>
+local function onConnect()
+  print('connected')
+end
 
-<span class="kd">local</span> <span class="kr">function</span> <span class="nf">onClosed</span><span class="p">()</span>
-  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;disconnected&#39;</span><span class="p">)</span>
-<span class="kr">end</span>
+local function onClosed()
+  print('disconnected')
+end
 
-<span class="kd">local</span> <span class="kr">function</span> <span class="nf">onError</span><span class="p">(</span><span class="n">evt</span><span class="p">)</span>
-  <span class="kr">if</span> <span class="n">evt</span><span class="p">.</span><span class="n">error</span> <span class="kr">then</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">evt</span><span class="p">.</span><span class="n">error</span><span class="p">)</span>
-  <span class="kr">end</span>
-<span class="kr">end</span>
+local function onError(evt)
+  if evt.error then
+    print(evt.error)
+  end
+end
 
-<span class="n">cb</span><span class="p">.</span><span class="n">events</span><span class="p">:</span><span class="n">addEventListener</span><span class="p">(</span><span class="s1">&#39;OnConnect&#39;</span><span class="p">,</span> <span class="n">onConnect</span><span class="p">)</span>
-<span class="n">cb</span><span class="p">.</span><span class="n">events</span><span class="p">:</span><span class="n">addEventListener</span><span class="p">(</span><span class="s1">&#39;OnClosed&#39;</span><span class="p">,</span> <span class="n">onClosed</span><span class="p">)</span>
-<span class="n">cb</span><span class="p">.</span><span class="n">events</span><span class="p">:</span><span class="n">addEventListener</span><span class="p">(</span><span class="s1">&#39;OnError&#39;</span><span class="p">,</span> <span class="n">onError</span><span class="p">)</span>
+cb.events:addEventListener('OnConnect', onConnect)
+cb.events:addEventListener('OnClosed', onClosed)
+cb.events:addEventListener('OnError', onError)
 
-<span class="n">cb</span><span class="p">:</span><span class="n">connect</span><span class="p">({</span>
-  <span class="n">host</span> <span class="o">=</span> <span class="s1">&#39;&lt;your-ip-address&gt;&#39;</span>
-  <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Sandy&#39;</span>
-<span class="p">})</span>
-</pre></div>
+cb:connect({
+  host = '&lt;your-ip-address&gt;'
+  name = 'Sandy'
+})</code></pre>
 
 
 <h3 id="connection-parameters">Connection Parameters</h3>

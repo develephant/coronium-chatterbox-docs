@@ -7,7 +7,7 @@ To learn more about the properties contained in each event see [Client Events](e
 ---
 
 ```lua
-local cb = require('chatterbox.client')
+local cb = require('plugin.chatterbox')
 
 --#############################################################
 --# Listeners
@@ -83,7 +83,7 @@ cb.events:addEventListener('OnClosed', onClosed)
 cb.events:addEventListener('OnTimeout', onTimeout)
 cb.events:addEventListener('OnError', onError)
 
-cb:start({
+cb:connect({
   host  = '<your-instance-ip>',
   key   = '<your-instance-key>', 
   name  = "Timmy"

@@ -46,86 +46,98 @@
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
 	<ul class="current">
-	  
           
-            <li class="toctree-l1">
-		
-    <a class="" href="..">Introduction</a>
-	    </li>
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="..">Introduction</a>
+        
+    </li>
+<li>
           
-            <li class="toctree-l1">
-		
-    <a class="" href="../guide/">Client Guide</a>
-	    </li>
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../guide/">Client Guide</a>
+        
+    </li>
+<li>
           
-            <li class="toctree-l1 current">
-		
-    <a class="current" href="./">Client Events</a>
-    <ul class="subnav">
+            <li>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Client Events</a>
+        
+            <ul>
             
-    <li class="toctree-l2"><a href="#event-table">Event Table</a></li>
-    
-
-    <li class="toctree-l2"><a href="#event-listeners">Event Listeners</a></li>
-    
-        <ul>
+                <li class="toctree-l3"><a href="#event-table">Event Table</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#event-listeners">Event Listeners</a></li>
+                
+                    <li><a class="toctree-l4" href="#onclientlist">OnClientList</a></li>
+                
+                    <li><a class="toctree-l4" href="#onclosed">OnClosed</a></li>
+                
+                    <li><a class="toctree-l4" href="#onconnect">OnConnect</a></li>
+                
+                    <li><a class="toctree-l4" href="#onerror">OnError</a></li>
+                
+                    <li><a class="toctree-l4" href="#onjoined">OnJoined</a></li>
+                
+                    <li><a class="toctree-l4" href="#onleft">OnLeft</a></li>
+                
+                    <li><a class="toctree-l4" href="#onmessage">OnMessage</a></li>
+                
+                    <li><a class="toctree-l4" href="#onnamechange">OnNameChange</a></li>
+                
+                    <li><a class="toctree-l4" href="#onroomlist">OnRoomList</a></li>
+                
+                    <li><a class="toctree-l4" href="#onsystemmessage">OnSystemMessage</a></li>
+                
+                    <li><a class="toctree-l4" href="#ontimeout">OnTimeout</a></li>
+                
+                    <li><a class="toctree-l4" href="#onunknownevent">OnUnknownEvent</a></li>
+                
+                    <li><a class="toctree-l4" href="#onwhisper">OnWhisper</a></li>
+                
+            
+            </ul>
         
-            <li><a class="toctree-l3" href="#onclientlist">OnClientList</a></li>
-        
-            <li><a class="toctree-l3" href="#onclosed">OnClosed</a></li>
-        
-            <li><a class="toctree-l3" href="#onconnect">OnConnect</a></li>
-        
-            <li><a class="toctree-l3" href="#onerror">OnError</a></li>
-        
-            <li><a class="toctree-l3" href="#onjoined">OnJoined</a></li>
-        
-            <li><a class="toctree-l3" href="#onleft">OnLeft</a></li>
-        
-            <li><a class="toctree-l3" href="#onmessage">OnMessage</a></li>
-        
-            <li><a class="toctree-l3" href="#onnamechange">OnNameChange</a></li>
-        
-            <li><a class="toctree-l3" href="#onroomlist">OnRoomList</a></li>
-        
-            <li><a class="toctree-l3" href="#onsystemmessage">OnSystemMessage</a></li>
-        
-            <li><a class="toctree-l3" href="#ontimeout">OnTimeout</a></li>
-        
-            <li><a class="toctree-l3" href="#onunknownevent">OnUnknownEvent</a></li>
-        
-            <li><a class="toctree-l3" href="#onwhisper">OnWhisper</a></li>
-        
-        </ul>
-    
-
-    </ul>
-	    </li>
+    </li>
+<li>
           
-            <li class="toctree-l1">
-		
-    <a class="" href="../actions/">Client Actions</a>
-	    </li>
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../actions/">Client Actions</a>
+        
+    </li>
+<li>
           
-            <li class="toctree-l1">
-		
-    <a class="" href="../server/">Server Guide</a>
-	    </li>
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../server/">Server Guide</a>
+        
+    </li>
+<li>
           
-            <li class="toctree-l1">
-		
-    <a class="" href="../development/">Development Tips</a>
-	    </li>
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../development/">Development Tips</a>
+        
+    </li>
+<li>
           
-            <li class="toctree-l1">
-		
-    <a class="" href="../example/">Example Setup</a>
-	    </li>
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../example/">Example Setup</a>
+        
+    </li>
+<li>
           
-            <li class="toctree-l1">
-		
-    <a class="" href="../about/">About</a>
-	    </li>
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../about/">About</a>
+        
+    </li>
+<li>
           
         </ul>
       </div>
@@ -239,11 +251,12 @@
 <hr />
 <h1 id="event-listeners">Event Listeners</h1>
 <p>To listen for events, add an event listener:</p>
-<pre class="codehilite"><code class="language-lua">local function onMessage( evt )
-  print(evt.data.name, evt.data.msg)
-end
+<div class="codehilite"><pre><span></span><span class="kd">local</span> <span class="kr">function</span> <span class="nf">onMessage</span><span class="p">(</span> <span class="n">evt</span> <span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">evt</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">name</span><span class="p">,</span> <span class="n">evt</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">msg</span><span class="p">)</span>
+<span class="kr">end</span>
 
-cb.events:addEventListener('OnMessage', onMessage)</code></pre>
+<span class="n">cb</span><span class="p">.</span><span class="n">events</span><span class="p">:</span><span class="n">addEventListener</span><span class="p">(</span><span class="s1">&#39;OnMessage&#39;</span><span class="p">,</span> <span class="n">onMessage</span><span class="p">)</span>
+</pre></div>
 
 
 <div class="admonition note">
@@ -281,16 +294,17 @@ cb.events:addEventListener('OnMessage', onMessage)</code></pre>
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<pre class="codehilite"><code class="language-lua">local function onClientList( evt )
-  print('client count:'..evt.data.cnt)
-  local clients = evt.data.clients
-  for i=1, #clients do
-    local client = clients[i]
-    print(client.name, client.id)
-  end
-end
+<div class="codehilite"><pre><span></span><span class="kd">local</span> <span class="kr">function</span> <span class="nf">onClientList</span><span class="p">(</span> <span class="n">evt</span> <span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;client count:&#39;</span><span class="o">..</span><span class="n">evt</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">cnt</span><span class="p">)</span>
+  <span class="kd">local</span> <span class="n">clients</span> <span class="o">=</span> <span class="n">evt</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">clients</span>
+  <span class="kr">for</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="o">#</span><span class="n">clients</span> <span class="kr">do</span>
+    <span class="kd">local</span> <span class="n">client</span> <span class="o">=</span> <span class="n">clients</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">client</span><span class="p">.</span><span class="n">name</span><span class="p">,</span> <span class="n">client</span><span class="p">.</span><span class="n">id</span><span class="p">)</span>
+  <span class="kr">end</span>
+<span class="kr">end</span>
 
-cb.events:addEventListener('OnClientList', onClientList)</code></pre>
+<span class="n">cb</span><span class="p">.</span><span class="n">events</span><span class="p">:</span><span class="n">addEventListener</span><span class="p">(</span><span class="s1">&#39;OnClientList&#39;</span><span class="p">,</span> <span class="n">onClientList</span><span class="p">)</span>
+</pre></div>
 
 
 <hr />
@@ -298,11 +312,12 @@ cb.events:addEventListener('OnClientList', onClientList)</code></pre>
 <p>The client has been disconnected from the server.</p>
 <p><strong>Data Properties</strong></p>
 <p><em>This event has no available properties.</em></p>
-<pre class="codehilite"><code class="language-lua">local function onClosed()
-  print('Client has disconnected from the server')
-end
+<div class="codehilite"><pre><span></span><span class="kd">local</span> <span class="kr">function</span> <span class="nf">onClosed</span><span class="p">()</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Client has disconnected from the server&#39;</span><span class="p">)</span>
+<span class="kr">end</span>
 
-cb.events:addEventListener('OnClosed', onClosed)</code></pre>
+<span class="n">cb</span><span class="p">.</span><span class="n">events</span><span class="p">:</span><span class="n">addEventListener</span><span class="p">(</span><span class="s1">&#39;OnClosed&#39;</span><span class="p">,</span> <span class="n">onClosed</span><span class="p">)</span>
+</pre></div>
 
 
 <hr />
@@ -311,11 +326,12 @@ cb.events:addEventListener('OnClosed', onClosed)</code></pre>
 <p><strong>Data Properties</strong></p>
 <p><em>This event has no available properties.</em></p>
 <p><strong>Example</strong></p>
-<pre class="codehilite"><code class="language-lua">local function onConnect()
-  print('Client has successfully connected to the server')
-end
+<div class="codehilite"><pre><span></span><span class="kd">local</span> <span class="kr">function</span> <span class="nf">onConnect</span><span class="p">()</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Client has successfully connected to the server&#39;</span><span class="p">)</span>
+<span class="kr">end</span>
 
-cb.events:addEventListener('OnConnect', onConnect)</code></pre>
+<span class="n">cb</span><span class="p">.</span><span class="n">events</span><span class="p">:</span><span class="n">addEventListener</span><span class="p">(</span><span class="s1">&#39;OnConnect&#39;</span><span class="p">,</span> <span class="n">onConnect</span><span class="p">)</span>
+</pre></div>
 
 
 <hr />
@@ -330,11 +346,12 @@ cb.events:addEventListener('OnConnect', onConnect)</code></pre>
 <p>The <strong>OnError</strong> event does not contain a <strong>data</strong> property. To access the error, use the <strong>error</strong> key directly on the event: <strong>evt.error</strong>.</p>
 </div>
 <p><strong>Example</strong></p>
-<pre class="codehilite"><code class="language-lua">local function OnError( evt )
-  print('Client Error: '..evt.error)
-end
+<div class="codehilite"><pre><span></span><span class="kd">local</span> <span class="kr">function</span> <span class="nf">OnError</span><span class="p">(</span> <span class="n">evt</span> <span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Client Error: &#39;</span><span class="o">..</span><span class="n">evt</span><span class="p">.</span><span class="n">error</span><span class="p">)</span>
+<span class="kr">end</span>
 
-cb.events:addEventListener('OnError', onError)</code></pre>
+<span class="n">cb</span><span class="p">.</span><span class="n">events</span><span class="p">:</span><span class="n">addEventListener</span><span class="p">(</span><span class="s1">&#39;OnError&#39;</span><span class="p">,</span> <span class="n">onError</span><span class="p">)</span>
+</pre></div>
 
 
 <hr />
@@ -368,11 +385,12 @@ cb.events:addEventListener('OnError', onError)</code></pre>
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<pre class="codehilite"><code class="language-lua">local function onJoined( evt )
-  print(evt.data.name, evt.data.id, evt.data.room)
-end
+<div class="codehilite"><pre><span></span><span class="kd">local</span> <span class="kr">function</span> <span class="nf">onJoined</span><span class="p">(</span> <span class="n">evt</span> <span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">evt</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">name</span><span class="p">,</span> <span class="n">evt</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">id</span><span class="p">,</span> <span class="n">evt</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">room</span><span class="p">)</span>
+<span class="kr">end</span>
 
-cb.events:addEventListener('OnJoined', onJoined)</code></pre>
+<span class="n">cb</span><span class="p">.</span><span class="n">events</span><span class="p">:</span><span class="n">addEventListener</span><span class="p">(</span><span class="s1">&#39;OnJoined&#39;</span><span class="p">,</span> <span class="n">onJoined</span><span class="p">)</span>
+</pre></div>
 
 
 <hr />
@@ -406,11 +424,12 @@ cb.events:addEventListener('OnJoined', onJoined)</code></pre>
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<pre class="codehilite"><code class="language-lua">local function onLeft( evt )
-  print(evt.data.name, evt.data.id, evt.data.room)
-end
+<div class="codehilite"><pre><span></span><span class="kd">local</span> <span class="kr">function</span> <span class="nf">onLeft</span><span class="p">(</span> <span class="n">evt</span> <span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">evt</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">name</span><span class="p">,</span> <span class="n">evt</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">id</span><span class="p">,</span> <span class="n">evt</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">room</span><span class="p">)</span>
+<span class="kr">end</span>
 
-cb.events:addEventListener('OnLeft', onLeft)</code></pre>
+<span class="n">cb</span><span class="p">.</span><span class="n">events</span><span class="p">:</span><span class="n">addEventListener</span><span class="p">(</span><span class="s1">&#39;OnLeft&#39;</span><span class="p">,</span> <span class="n">onLeft</span><span class="p">)</span>
+</pre></div>
 
 
 <hr />
@@ -449,11 +468,12 @@ cb.events:addEventListener('OnLeft', onLeft)</code></pre>
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<pre class="codehilite"><code class="language-lua">local function onMessage( evt )
-  print(evt.data.name, evt.data.msg)
-end
+<div class="codehilite"><pre><span></span><span class="kd">local</span> <span class="kr">function</span> <span class="nf">onMessage</span><span class="p">(</span> <span class="n">evt</span> <span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">evt</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">name</span><span class="p">,</span> <span class="n">evt</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">msg</span><span class="p">)</span>
+<span class="kr">end</span>
 
-cb.events:addEventListener('OnMessage', onMessage)</code></pre>
+<span class="n">cb</span><span class="p">.</span><span class="n">events</span><span class="p">:</span><span class="n">addEventListener</span><span class="p">(</span><span class="s1">&#39;OnMessage&#39;</span><span class="p">,</span> <span class="n">onMessage</span><span class="p">)</span>
+</pre></div>
 
 
 <hr />
@@ -496,12 +516,13 @@ cb.events:addEventListener('OnMessage', onMessage)</code></pre>
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<pre class="codehilite"><code class="language-lua">local function onNameChange( evt )
-  print('Old name was: '..evt.data.old_name)
-  print('New name is: '..evt.data.name)
-end
+<div class="codehilite"><pre><span></span><span class="kd">local</span> <span class="kr">function</span> <span class="nf">onNameChange</span><span class="p">(</span> <span class="n">evt</span> <span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Old name was: &#39;</span><span class="o">..</span><span class="n">evt</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">old_name</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;New name is: &#39;</span><span class="o">..</span><span class="n">evt</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">name</span><span class="p">)</span>
+<span class="kr">end</span>
 
-cb.events:addEventListener('OnNameChange', onNameChange)</code></pre>
+<span class="n">cb</span><span class="p">.</span><span class="n">events</span><span class="p">:</span><span class="n">addEventListener</span><span class="p">(</span><span class="s1">&#39;OnNameChange&#39;</span><span class="p">,</span> <span class="n">onNameChange</span><span class="p">)</span>
+</pre></div>
 
 
 <hr />
@@ -535,15 +556,16 @@ cb.events:addEventListener('OnNameChange', onNameChange)</code></pre>
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<pre class="codehilite"><code class="language-lua">local function onRoomList( evt )
-  print('room count:'..evt.data.cnt)
-  local rooms = evt.data.rooms
-  for i=1, #rooms do
-    print(rooms[i].name)
-  end
-end
+<div class="codehilite"><pre><span></span><span class="kd">local</span> <span class="kr">function</span> <span class="nf">onRoomList</span><span class="p">(</span> <span class="n">evt</span> <span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;room count:&#39;</span><span class="o">..</span><span class="n">evt</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">cnt</span><span class="p">)</span>
+  <span class="kd">local</span> <span class="n">rooms</span> <span class="o">=</span> <span class="n">evt</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">rooms</span>
+  <span class="kr">for</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="o">#</span><span class="n">rooms</span> <span class="kr">do</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">rooms</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">name</span><span class="p">)</span>
+  <span class="kr">end</span>
+<span class="kr">end</span>
 
-cb.events:addEventListener('onRoomList', onRoomList)</code></pre>
+<span class="n">cb</span><span class="p">.</span><span class="n">events</span><span class="p">:</span><span class="n">addEventListener</span><span class="p">(</span><span class="s1">&#39;onRoomList&#39;</span><span class="p">,</span> <span class="n">onRoomList</span><span class="p">)</span>
+</pre></div>
 
 
 <hr />
@@ -581,13 +603,14 @@ cb.events:addEventListener('onRoomList', onRoomList)</code></pre>
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<pre class="codehilite"><code class="language-lua">local function onSystemMessage( evt )
-  if evt.data.action == 'player_turn' then
-    print('players turn is: '..evt.data.payload)
-  end
-end
+<div class="codehilite"><pre><span></span><span class="kd">local</span> <span class="kr">function</span> <span class="nf">onSystemMessage</span><span class="p">(</span> <span class="n">evt</span> <span class="p">)</span>
+  <span class="kr">if</span> <span class="n">evt</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">action</span> <span class="o">==</span> <span class="s1">&#39;player_turn&#39;</span> <span class="kr">then</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;players turn is: &#39;</span><span class="o">..</span><span class="n">evt</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">payload</span><span class="p">)</span>
+  <span class="kr">end</span>
+<span class="kr">end</span>
 
-cb.events:addEventListener('OnSystemMessage', onSystemMessage)</code></pre>
+<span class="n">cb</span><span class="p">.</span><span class="n">events</span><span class="p">:</span><span class="n">addEventListener</span><span class="p">(</span><span class="s1">&#39;OnSystemMessage&#39;</span><span class="p">,</span> <span class="n">onSystemMessage</span><span class="p">)</span>
+</pre></div>
 
 
 <hr />
@@ -600,14 +623,15 @@ cb.events:addEventListener('OnSystemMessage', onSystemMessage)</code></pre>
 <p><strong>Data Properties</strong></p>
 <p><em>This event has no available properties.</em></p>
 <p><strong>Example</strong></p>
-<pre class="codehilite"><code class="language-lua">local function onTimeout()
-  print('The client has timed out')
+<div class="codehilite"><pre><span></span><span class="kd">local</span> <span class="kr">function</span> <span class="nf">onTimeout</span><span class="p">()</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The client has timed out&#39;</span><span class="p">)</span>
 
-  --if you'd like to disconnect on a timeout event:
-  cs:disconnect()
-end
+  <span class="c1">--if you&#39;d like to disconnect on a timeout event:</span>
+  <span class="n">cs</span><span class="p">:</span><span class="n">disconnect</span><span class="p">()</span>
+<span class="kr">end</span>
 
-cb.events:addEventListener('OnTimeout', onTimeout)</code></pre>
+<span class="n">cb</span><span class="p">.</span><span class="n">events</span><span class="p">:</span><span class="n">addEventListener</span><span class="p">(</span><span class="s1">&#39;OnTimeout&#39;</span><span class="p">,</span> <span class="n">onTimeout</span><span class="p">)</span>
+</pre></div>
 
 
 <hr />
@@ -620,11 +644,12 @@ cb.events:addEventListener('OnTimeout', onTimeout)</code></pre>
 <p><strong>Data Properties</strong></p>
 <p><em>This event has no available properties.</em></p>
 <p><strong>Example</strong></p>
-<pre class="codehilite"><code class="language-lua">local function onUnkownEvent()
-  print('An unknown event was received')
-end
+<div class="codehilite"><pre><span></span><span class="kd">local</span> <span class="kr">function</span> <span class="nf">onUnkownEvent</span><span class="p">()</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;An unknown event was received&#39;</span><span class="p">)</span>
+<span class="kr">end</span>
 
-cb.events:addEventListener('OnUnknownEvent', onUnkownEvent)</code></pre>
+<span class="n">cb</span><span class="p">.</span><span class="n">events</span><span class="p">:</span><span class="n">addEventListener</span><span class="p">(</span><span class="s1">&#39;OnUnknownEvent&#39;</span><span class="p">,</span> <span class="n">onUnkownEvent</span><span class="p">)</span>
+</pre></div>
 
 
 <hr />
@@ -667,11 +692,12 @@ cb.events:addEventListener('OnUnknownEvent', onUnkownEvent)</code></pre>
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<pre class="codehilite"><code class="language-lua">local function onWhisper( evt )
-  print(evt.data.name, evt.data.msg)
-end
+<div class="codehilite"><pre><span></span><span class="kd">local</span> <span class="kr">function</span> <span class="nf">onWhisper</span><span class="p">(</span> <span class="n">evt</span> <span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">evt</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">name</span><span class="p">,</span> <span class="n">evt</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">msg</span><span class="p">)</span>
+<span class="kr">end</span>
 
-cb.events:addEventListener('OnWhisper', onWhisper)</code></pre>
+<span class="n">cb</span><span class="p">.</span><span class="n">events</span><span class="p">:</span><span class="n">addEventListener</span><span class="p">(</span><span class="s1">&#39;OnWhisper&#39;</span><span class="p">,</span> <span class="n">onWhisper</span><span class="p">)</span>
+</pre></div>
               
             </div>
           </div>

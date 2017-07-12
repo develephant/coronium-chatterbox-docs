@@ -46,59 +46,75 @@
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
 	<ul class="current">
-	  
           
-            <li class="toctree-l1">
-		
-    <a class="" href="..">Introduction</a>
-	    </li>
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="..">Introduction</a>
+        
+    </li>
+<li>
           
-            <li class="toctree-l1">
-		
-    <a class="" href="../guide/">Client Guide</a>
-	    </li>
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../guide/">Client Guide</a>
+        
+    </li>
+<li>
           
-            <li class="toctree-l1">
-		
-    <a class="" href="../events/">Client Events</a>
-	    </li>
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../events/">Client Events</a>
+        
+    </li>
+<li>
           
-            <li class="toctree-l1">
-		
-    <a class="" href="../actions/">Client Actions</a>
-	    </li>
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../actions/">Client Actions</a>
+        
+    </li>
+<li>
           
-            <li class="toctree-l1">
-		
-    <a class="" href="../server/">Server Guide</a>
-	    </li>
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../server/">Server Guide</a>
+        
+    </li>
+<li>
           
-            <li class="toctree-l1 current">
-		
-    <a class="current" href="./">Development Tips</a>
-    <ul class="subnav">
+            <li>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Development Tips</a>
+        
+            <ul>
             
-    <li class="toctree-l2"><a href="#event-listeners">Event Listeners</a></li>
-    
-
-    <li class="toctree-l2"><a href="#client-names">Client Names</a></li>
-    
-
-    <li class="toctree-l2"><a href="#system-messages">System Messages</a></li>
-    
-
-    </ul>
-	    </li>
+                <li class="toctree-l3"><a href="#event-listeners">Event Listeners</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#client-names">Client Names</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#system-messages">System Messages</a></li>
+                
+            
+            </ul>
+        
+    </li>
+<li>
           
-            <li class="toctree-l1">
-		
-    <a class="" href="../example/">Example Setup</a>
-	    </li>
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../example/">Example Setup</a>
+        
+    </li>
+<li>
           
-            <li class="toctree-l1">
-		
-    <a class="" href="../about/">About</a>
-	    </li>
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../about/">About</a>
+        
+    </li>
+<li>
           
         </ul>
       </div>
@@ -135,7 +151,8 @@
                 <h2 id="event-listeners">Event Listeners</h2>
 <p>Events can be registered to different listeners to take action on them. In almost all cases, there should only be one listener for an event at any given time. This means you will need to be mindful of "removing" a listener when appropiate.</p>
 <p>To remove an event listener use <strong>removeEventListener</strong>:</p>
-<pre class="codehilite"><code class="language-lua">cb.events:removeEventListener('OnJoined', onJoined)</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">cb</span><span class="p">.</span><span class="n">events</span><span class="p">:</span><span class="n">removeEventListener</span><span class="p">(</span><span class="s1">&#39;OnJoined&#39;</span><span class="p">,</span> <span class="n">onJoined</span><span class="p">)</span>
+</pre></div>
 
 
 <p>You should always be listening for the <a href="../events#onclientlist">OnClientList</a> and <a href="../events#onclosed">OnClosed</a> event throughout your application while connected to your instance. The <a href="../events#onclientlist">OnClientList</a> event provides a syncing point for the clients currently connected to the room. This event is trigged when a client joins, leaves, or makes a name change in the room. <strong><em>If you're not listening for this event, you will not know what the current state of the room is.</em></strong></p>
@@ -151,22 +168,23 @@
 <p>System messages can facilitate more complex applications. A system message contains two properties, an <strong>action</strong> and <strong>payload</strong>. Using this message type allows you to control your application without having to parse through "chat" based messages.</p>
 <p>The <strong>action</strong> property should be a unique key that you can check for on the <a href="../events#onsystemmessage">OnSystemMessage</a> event. The <strong>payload</strong> is any data required for that action. It can be a simple value, or a complex data table.</p>
 <p>By listening for system messages, and checking the <strong>action</strong> key you can implement limitless functionality:</p>
-<pre class="codehilite"><code class="language-lua">local cb = require('chatterbox.client')
+<div class="codehilite"><pre><span></span><span class="kd">local</span> <span class="n">cb</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s1">&#39;chatterbox.client&#39;</span><span class="p">)</span>
 
-local function onSystemMessage( evt )
-  local action = evt.action
-  local payload = evt.payload
+<span class="kd">local</span> <span class="kr">function</span> <span class="nf">onSystemMessage</span><span class="p">(</span> <span class="n">evt</span> <span class="p">)</span>
+  <span class="kd">local</span> <span class="n">action</span> <span class="o">=</span> <span class="n">evt</span><span class="p">.</span><span class="n">action</span>
+  <span class="kd">local</span> <span class="n">payload</span> <span class="o">=</span> <span class="n">evt</span><span class="p">.</span><span class="n">payload</span>
 
-  if action == 'open_broswer' then
-    --possible function, payload is a data table
-    openWebView(payload.url)
-  elseif action == 'flash_screen' then
-    --possible function, payload contains a number
-    flashScreen({repeat=payload})
-  end
-end
+  <span class="kr">if</span> <span class="n">action</span> <span class="o">==</span> <span class="s1">&#39;open_broswer&#39;</span> <span class="kr">then</span>
+    <span class="c1">--possible function, payload is a data table</span>
+    <span class="n">openWebView</span><span class="p">(</span><span class="n">payload</span><span class="p">.</span><span class="n">url</span><span class="p">)</span>
+  <span class="kr">elseif</span> <span class="n">action</span> <span class="o">==</span> <span class="s1">&#39;flash_screen&#39;</span> <span class="kr">then</span>
+    <span class="c1">--possible function, payload contains a number</span>
+    <span class="n">flashScreen</span><span class="p">({</span><span class="kr">repeat</span><span class="o">=</span><span class="n">payload</span><span class="p">})</span>
+  <span class="kr">end</span>
+<span class="kr">end</span>
 
-cb.events:addEventListener('OnSystemMessage', onSystemMessage)</code></pre>
+<span class="n">cb</span><span class="p">.</span><span class="n">events</span><span class="p">:</span><span class="n">addEventListener</span><span class="p">(</span><span class="s1">&#39;OnSystemMessage&#39;</span><span class="p">,</span> <span class="n">onSystemMessage</span><span class="p">)</span>
+</pre></div>
 
 
 <div class="admonition important">
@@ -174,33 +192,35 @@ cb.events:addEventListener('OnSystemMessage', onSystemMessage)</code></pre>
 <p>System messages are always broadcast to the entire room. If you want an event to only operate on a specific client, pass the clients ID along in the payload and check against it.</p>
 </div>
 <p>Acting on a specific client:</p>
-<pre class="codehilite"><code class="language-lua">local cb = require('chatterbox.client')
+<div class="codehilite"><pre><span></span><span class="kd">local</span> <span class="n">cb</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s1">&#39;chatterbox.client&#39;</span><span class="p">)</span>
 
-local function onSystemMessage( evt )
-  local action = evt.action
-  local payload = evt.payload --a data table
+<span class="kd">local</span> <span class="kr">function</span> <span class="nf">onSystemMessage</span><span class="p">(</span> <span class="n">evt</span> <span class="p">)</span>
+  <span class="kd">local</span> <span class="n">action</span> <span class="o">=</span> <span class="n">evt</span><span class="p">.</span><span class="n">action</span>
+  <span class="kd">local</span> <span class="n">payload</span> <span class="o">=</span> <span class="n">evt</span><span class="p">.</span><span class="n">payload</span> <span class="c1">--a data table</span>
 
-  if action == 'set_score' then
-    if payload.client_id == cs:getId() then
-      client_score = payload.score
-    end
-  end
-end
+  <span class="kr">if</span> <span class="n">action</span> <span class="o">==</span> <span class="s1">&#39;set_score&#39;</span> <span class="kr">then</span>
+    <span class="kr">if</span> <span class="n">payload</span><span class="p">.</span><span class="n">client_id</span> <span class="o">==</span> <span class="n">cs</span><span class="p">:</span><span class="n">getId</span><span class="p">()</span> <span class="kr">then</span>
+      <span class="n">client_score</span> <span class="o">=</span> <span class="n">payload</span><span class="p">.</span><span class="n">score</span>
+    <span class="kr">end</span>
+  <span class="kr">end</span>
+<span class="kr">end</span>
 
-cb.events:addEventListener('OnSystemMessage', onSystemMessage)</code></pre>
+<span class="n">cb</span><span class="p">.</span><span class="n">events</span><span class="p">:</span><span class="n">addEventListener</span><span class="p">(</span><span class="s1">&#39;OnSystemMessage&#39;</span><span class="p">,</span> <span class="n">onSystemMessage</span><span class="p">)</span>
+</pre></div>
 
 
 <p>You can also sync application state by passing a data table as the <code>payload</code>:</p>
-<pre class="codehilite"><code class="language-lua">...
+<div class="codehilite"><pre><span></span><span class="p">...</span>
 
-local function onSystemMessage( evt )
-  if evt.action == 'state' then
-    app_state = evt.payload
-    --do stuff with the app_state
-  end
-end
+<span class="kd">local</span> <span class="kr">function</span> <span class="nf">onSystemMessage</span><span class="p">(</span> <span class="n">evt</span> <span class="p">)</span>
+  <span class="kr">if</span> <span class="n">evt</span><span class="p">.</span><span class="n">action</span> <span class="o">==</span> <span class="s1">&#39;state&#39;</span> <span class="kr">then</span>
+    <span class="n">app_state</span> <span class="o">=</span> <span class="n">evt</span><span class="p">.</span><span class="n">payload</span>
+    <span class="c1">--do stuff with the app_state</span>
+  <span class="kr">end</span>
+<span class="kr">end</span>
 
-...</code></pre>
+<span class="p">...</span>
+</pre></div>
               
             </div>
           </div>

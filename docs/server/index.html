@@ -46,61 +46,73 @@
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
 	<ul class="current">
-	  
           
-            <li class="toctree-l1">
-		
-    <a class="" href="..">Introduction</a>
-	    </li>
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="..">Introduction</a>
+        
+    </li>
+<li>
           
-            <li class="toctree-l1">
-		
-    <a class="" href="../guide/">Client Guide</a>
-	    </li>
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../guide/">Client Guide</a>
+        
+    </li>
+<li>
           
-            <li class="toctree-l1">
-		
-    <a class="" href="../events/">Client Events</a>
-	    </li>
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../events/">Client Events</a>
+        
+    </li>
+<li>
           
-            <li class="toctree-l1">
-		
-    <a class="" href="../actions/">Client Actions</a>
-	    </li>
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../actions/">Client Actions</a>
+        
+    </li>
+<li>
           
-            <li class="toctree-l1 current">
-		
-    <a class="current" href="./">Server Guide</a>
-    <ul class="subnav">
+            <li>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Server Guide</a>
+        
+            <ul>
             
-    <li class="toctree-l2"><a href="#system-service">System Service</a></li>
-    
-        <ul>
+                <li class="toctree-l3"><a href="#system-service">System Service</a></li>
+                
+                    <li><a class="toctree-l4" href="#configuration">Configuration</a></li>
+                
+                    <li><a class="toctree-l4" href="#viewing-logs">Viewing Logs</a></li>
+                
+            
+            </ul>
         
-            <li><a class="toctree-l3" href="#configuration">Configuration</a></li>
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../development/">Development Tips</a>
         
-            <li><a class="toctree-l3" href="#viewing-logs">Viewing Logs</a></li>
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../example/">Example Setup</a>
         
-        </ul>
-    
-
-    </ul>
-	    </li>
+    </li>
+<li>
           
-            <li class="toctree-l1">
-		
-    <a class="" href="../development/">Development Tips</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../example/">Example Setup</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../about/">About</a>
-	    </li>
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../about/">About</a>
+        
+    </li>
+<li>
           
         </ul>
       </div>
@@ -137,15 +149,18 @@
                 <h1 id="system-service">System Service</h1>
 <p>When your <strong>Coronium ChatterBox</strong> instance starts, its monitored by a utility called <strong>Monit</strong>, which makes sure that your instance keeps running. In the event that the server runs into an issue or crashes, it will be restarted shortly.</p>
 <p>In the rare case where you need to manually stop or start the instance, log in using the <strong>coronium</strong> user.</p>
-<pre class="codehilite"><code>ssh coronium@&lt;your-instance-ip&gt;</code></pre>
+<div class="codehilite"><pre><span></span>ssh coronium@&lt;your-instance-ip&gt;
+</pre></div>
 
 
 <p>To stop the instance, on the command line, enter:</p>
-<pre class="codehilite"><code>sudo monit stop chatterbox</code></pre>
+<div class="codehilite"><pre><span></span>sudo monit stop chatterbox
+</pre></div>
 
 
 <p>To start the instance, use:</p>
-<pre class="codehilite"><code>sudo monit start chatterbox</code></pre>
+<div class="codehilite"><pre><span></span>sudo monit start chatterbox
+</pre></div>
 
 
 <p><em>You will be prompted for your password. The default is <strong>coroniumadmin</strong>.</em></p>
@@ -198,22 +213,25 @@
 <p>Once inside your instance, download the <strong>config.lua</strong> file to your local machine.</p>
 <p>Open the <strong>config.lua</strong> file in a text editor and edit the config table, as needed.</p>
 <p><em>Default table in config.lua:</em></p>
-<pre class="codehilite"><code class="language-lua">return 
-{
-  key = &quot;8477ebc412386117059664d45637e397&quot;,
-  port = 7175,
-  room = &quot;Lobby&quot;,
-  timeout = 900 --secs
-}</code></pre>
+<div class="codehilite"><pre><span></span><span class="kr">return</span> 
+<span class="p">{</span>
+  <span class="n">key</span> <span class="o">=</span> <span class="s2">&quot;8477ebc412386117059664d45637e397&quot;</span><span class="p">,</span>
+  <span class="n">port</span> <span class="o">=</span> <span class="mi">7175</span><span class="p">,</span>
+  <span class="n">room</span> <span class="o">=</span> <span class="s2">&quot;Lobby&quot;</span><span class="p">,</span>
+  <span class="n">timeout</span> <span class="o">=</span> <span class="mi">900</span> <span class="c1">--secs</span>
+<span class="p">}</span>
+</pre></div>
 
 
 <p>Once your changes are complete, upload the <strong>config.lua</strong> back into same directory.</p>
 <p>Now you'll need to log into the server via SSH using the <strong>coronium</strong> user:</p>
-<pre class="codehilite"><code>ssh coronium@&lt;your-instance-ip&gt;</code></pre>
+<div class="codehilite"><pre><span></span>ssh coronium@&lt;your-instance-ip&gt;
+</pre></div>
 
 
 <p>Once you are logged in, restart the <strong>chatterbox</strong> service to make the new config active:</p>
-<pre class="codehilite"><code>sudo monit restart chatterbox</code></pre>
+<div class="codehilite"><pre><span></span>sudo monit restart chatterbox
+</pre></div>
 
 
 <p>Your instance will now be using the new configuration options.</p>
@@ -249,15 +267,18 @@
 <p>Log file timestamps are noted in UTC.</p>
 </div>
 <p>First, log into your instance using the <strong>coronium</strong> user:</p>
-<pre class="codehilite"><code>ssh coronium@&lt;your-instance-ip&gt;</code></pre>
+<div class="codehilite"><pre><span></span>ssh coronium@&lt;your-instance-ip&gt;
+</pre></div>
 
 
 <p>To view the log file run the following on the command line:</p>
-<pre class="codehilite"><code>cat logs/chatterbox.log</code></pre>
+<div class="codehilite"><pre><span></span>cat logs/chatterbox.log
+</pre></div>
 
 
 <p>To follow the log in real-time, use:</p>
-<pre class="codehilite"><code>tail -f logs/chatterbox.log</code></pre>
+<div class="codehilite"><pre><span></span>tail -f logs/chatterbox.log
+</pre></div>
 
 
 <div class="admonition note">

@@ -76,12 +76,12 @@ cb:connect({
 
 |Parameter|Description|Required|
 |---------|-----------|--------|
-|`host`|The instance address.|__Y__|
-|`name`|The client display name.|__Y__|
-|`port`|The instance port.|N|
-|`key`|The authentication key.|N|
-|`room`|The initial room to connect to.|N|
-|`debug`|Output client-side debugging info.|N|
+|__host__|The instance address.|__Y__|
+|__name__|The client display name.|__Y__|
+|__port__|The instance port.|N|
+|__key__|The authentication key.|N|
+|__room__|The initial room to connect to.|N|
+|__debug__|Output client-side debugging info.|N|
 
 !!! tip
     See [Configuration](server/#configuration) in the Server Guide for more details.

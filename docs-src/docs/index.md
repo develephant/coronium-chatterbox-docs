@@ -101,3 +101,4 @@ ssh coronium@<your-instance-ip>
 !!! important
     You should change the default password after the install. Making sure to log in as the __coronium__ user, enter __sudo passwd__ in the shell, and then follow the prompts.
 
+_You can also run __Coronium Chatterbox__ locally, usind a stand-alone binary from the [install repository](https://github.com/develephant/coronium-chatterbox/tree/master/standalone).

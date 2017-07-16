@@ -4,7 +4,7 @@ __Coronium ChatterBox__ runs best on a __[DigitalOcean](https://m.do.co/c/cddeed
     If you're new to [DigitalOcean](https://m.do.co/c/cddeeddbbdb8) please consider signing up with __[this link](https://m.do.co/c/cddeeddbbdb8)__. Not only will you receive a $10 credit (2 free months), but it also helps support the continued development, and testing of __Coronium ChatterBox__.
 
 
-### Create A New Droplet
+### Create A Droplet
 
 Once you log into your [DigitalOcean](https://m.do.co/c/cddeeddbbdb8) account, click the __Create__ button and select __Droplets__ from the menu.
 
@@ -42,7 +42,7 @@ And finally, click the __Create__ button to spin up the droplet.
 
 ![step7](../imgs/step07.png)
 
-### Connect To The Droplet
+### Install ChatterBox
 
 Once your droplet is done spinning up, note the ip address.
 
@@ -61,7 +61,7 @@ _Replace __<your-instance-ip\>__ with the address that was assigned to your drop
 
 Once you are connected to the droplet, copy and paste the following line into the terminal:
 
-`curl -LO https://s3.amazonaws.com/coronium-chatterbox/cb.sh && sudo bash ./cb.sh`
+`curl -LO https://s3.amazonaws.com/coronium-chatterbox/up.sh && sudo bash ./up.sh`
 
 Once the installation is complete, __Coronium ChatterBox__ is ready for connections. Log out of the server by typing __exit__ on the command line.
 

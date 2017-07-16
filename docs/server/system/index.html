@@ -115,13 +115,6 @@
         
             <ul>
             
-                <li class="toctree-l3"><a href="#system-service">System Service</a></li>
-                
-                    <li><a class="toctree-l4" href="#configuration">Configuration</a></li>
-                
-                    <li><a class="toctree-l4" href="#viewing-logs">Viewing Logs</a></li>
-                
-            
             </ul>
         
     </li>
@@ -230,144 +223,25 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="system-service">System Service</h1>
-<p>When your <strong>Coronium ChatterBox</strong> instance starts, its monitored by a utility called <strong>Monit</strong>, which makes sure that your instance keeps running. In the event that the server runs into an issue or crashes, it will be restarted shortly.</p>
-<p>In the rare case where you need to manually stop or start the instance, log in using the <strong>coronium</strong> user.</p>
+                <p>When your <strong>Coronium ChatterBox</strong> server starts, its monitored by a utility called <strong>Monit</strong>, which makes sure that the <strong>chatterbox</strong> process is active. In the event that the process runs into an issue or crashes, it will be restarted shortly.</p>
+<p>In the rare case where you need to manually stop or start the process, log in using the <strong>coronium</strong> user.</p>
 <div class="codehilite"><pre><span></span>ssh coronium@&lt;your-instance-ip&gt;
 </pre></div>
 
 
-<p>To stop the instance, on the command line, enter:</p>
+<p>To stop the process, on the command line, enter:</p>
 <div class="codehilite"><pre><span></span>sudo monit stop chatterbox
 </pre></div>
 
 
-<p>To start the instance, use:</p>
+<p>To start the process, use:</p>
 <div class="codehilite"><pre><span></span>sudo monit start chatterbox
 </pre></div>
 
 
-<p><em>You will be prompted for your password. The default is <strong>coroniumadmin</strong>.</em></p>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
-<p>You should rarely need to manually control the instance.</p>
-</div>
-<hr />
-<h2 id="configuration">Configuration</h2>
-<p>The following configuration options are available to set on the server-side:</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Description</th>
-<th>Default</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>key</strong></td>
-<td>The client connection key.</td>
-<td>"8477ebc412386117059664d45637e397"</td>
-</tr>
-<tr>
-<td><strong>port</strong></td>
-<td>The port that the client connects to.</td>
-<td>7175</td>
-</tr>
-<tr>
-<td><strong>room</strong></td>
-<td>The default room the client joins, if not provided.</td>
-<td>"Lobby"</td>
-</tr>
-<tr>
-<td><strong>timeout</strong></td>
-<td>The global client timeout setting, in seconds.</td>
-<td>900 (15 min)</td>
-</tr>
-</tbody>
-</table>
-<p>To adjust the configuration options, you will need to log into the server via SFTP:</p>
-<p>First log into your <strong>Coronium ChatterBox</strong> instance with an SFTP program.</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>The open source SFTP browser <a href="https://filezilla-project.org/">FileZilla</a> works well for both OSX and Windows.</p>
-</div>
-<p>Log in with the SFTP program using the <strong>coronium</strong> user.</p>
-<p>Supply the password (if you didn't change it from the fresh install, it's <strong>coroniumadmin</strong>).</p>
-<p>Once inside your instance, download the <strong>config.lua</strong> file to your local machine.</p>
-<p>Open the <strong>config.lua</strong> file in a text editor and edit the config table, as needed.</p>
-<p><em>Default table in config.lua:</em></p>
-<div class="codehilite"><pre><span></span><span class="kr">return</span> 
-<span class="p">{</span>
-  <span class="n">key</span> <span class="o">=</span> <span class="s2">&quot;8477ebc412386117059664d45637e397&quot;</span><span class="p">,</span>
-  <span class="n">port</span> <span class="o">=</span> <span class="mi">7175</span><span class="p">,</span>
-  <span class="n">room</span> <span class="o">=</span> <span class="s2">&quot;Lobby&quot;</span><span class="p">,</span>
-  <span class="n">timeout</span> <span class="o">=</span> <span class="mi">900</span> <span class="c1">--secs</span>
-<span class="p">}</span>
-</pre></div>
-
-
-<p>Once your changes are complete, upload the <strong>config.lua</strong> back into same directory.</p>
-<p>Now you'll need to log into the server via SSH using the <strong>coronium</strong> user:</p>
-<div class="codehilite"><pre><span></span>ssh coronium@&lt;your-instance-ip&gt;
-</pre></div>
-
-
-<p>Once you are logged in, restart the <strong>chatterbox</strong> service to make the new config active:</p>
-<div class="codehilite"><pre><span></span>sudo monit restart chatterbox
-</pre></div>
-
-
-<p>Your instance will now be using the new configuration options.</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>You can also use the <strong>nano</strong> text editor on the server (nano config.lua), skipping the config.lua download steps.</p>
-</div>
-<h4 id="key">Key</h4>
-<p>To help protect from errant client connections, the server contains a key that must be matched with client connection call. If the key is incorrect or not provided, the connection will be closed. There is a default key baked into the client and the server, but you should change this at your convienence.</p>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>Once you change the server key, make sure to also update your client connection method by passing the <strong>key</strong> parameter, or you won't be able to connect. See <a href="../guide/#connecting-the-client">Connecting The Client</a>.</p>
-</div>
-<h4 id="port">Port</h4>
-<p>By default the server will listen for new connections on port 7175, you can change this option as desired.</p>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>Once you change the server port, make sure to also update your client connection method by passing the <strong>port</strong> parameter, or you won't be able to connect. See <a href="../guide/#connecting-the-client">Connecting The Client</a>.</p>
-</div>
-<h4 id="room">Room</h4>
-<p>When a client connection is confirmed, they will be added to the default room <em>Lobby</em>. You can change this value to make the default something different.</p>
-<h4 id="timeout">Timeout</h4>
-<p>Client connection timeouts are managed on the server-side. By default a client will be disconnected after being idle for 15 minutes. This option can be set to 0 to disable the timeout.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>While you can disable the client timeout by provding a 0 as a config value, you run the risk of have a client "hang" or in other cases an errant client that takes up one of the servers connections. <strong><em>Disabling the timeout is not recommended</em></strong>.</p>
-</div>
-<hr />
-<h2 id="viewing-logs">Viewing Logs</h2>
-<p>When developing your application, there may be times when you'd like to see what's happening on the server side. You can view the log file to acheive this.</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>Log file timestamps are noted in UTC.</p>
-</div>
-<p>First, log into your instance using the <strong>coronium</strong> user:</p>
-<div class="codehilite"><pre><span></span>ssh coronium@&lt;your-instance-ip&gt;
-</pre></div>
-
-
-<p>To view the log file run the following on the command line:</p>
-<div class="codehilite"><pre><span></span>cat logs/chatterbox.log
-</pre></div>
-
-
-<p>To follow the log in real-time, use:</p>
-<div class="codehilite"><pre><span></span>tail -f logs/chatterbox.log
-</pre></div>
-
-
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The log file is managed automatically, and will be "rotated" once it exceeds a certain size limit.</p>
+<p>You should rarely need to manually control the <strong>chatterbox</strong> process.</p>
 </div>
               
             </div>

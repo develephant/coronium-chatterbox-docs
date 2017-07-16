@@ -72,19 +72,10 @@
         
             <ul>
             
-                <li class="toctree-l3"><a href="#create-a-new-instance">Create A New Instance</a></li>
+                <li class="toctree-l3"><a href="#create-an-instance">Create An Instance</a></li>
                 
             
-                <li class="toctree-l3"><a href="#connect-to-the-instance">Connect To The Instance</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#testing">Testing</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#logs">Logs</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#password">Password</a></li>
+                <li class="toctree-l3"><a href="#install-chatterbox">Install ChatterBox</a></li>
                 
             
             </ul>
@@ -243,7 +234,7 @@
 <p class="admonition-title">Note</p>
 <p>This guide assumes that you have an active AWS account, and are familiar with managing EC2 instances.</p>
 </div>
-<h3 id="create-a-new-instance">Create A New Instance</h3>
+<h3 id="create-an-instance">Create An Instance</h3>
 <p>Once you log into the <strong><a href="https://aws.amazon.com/console/">AWS Console</a></strong>, navigate to the <strong>EC2</strong> service. Click the <strong>Launch Instance</strong> button.</p>
 <p>On the next screen, find the <strong>Ubuntu Server 16.04 LTS (HVM)</strong> AMI, and click the <strong>Select</strong> button on the right.</p>
 <p>Select your preferred instance type. A <strong>t2.micro</strong> is a good starting point. You can always increase the size later.</p>
@@ -267,7 +258,7 @@
 </tbody>
 </table>
 <p>Adjust any additional settings, and then <strong>Launch</strong> the AMI.</p>
-<h3 id="connect-to-the-instance">Connect To The Instance</h3>
+<h3 id="install-chatterbox">Install ChatterBox</h3>
 <p>Once your instance is in a <strong>running</strong> state, note the <strong>IPv4 Public IP</strong> address.</p>
 <p>Using a terminal/shell of your choice, SSH into the instance.</p>
 <div class="admonition tip">
@@ -282,42 +273,6 @@
 <p>Once you are connected to the droplet, copy and paste the following line into the terminal:</p>
 <p><code>curl -LO https://s3.amazonaws.com/coronium-chatterbox/ami.sh &amp;&amp; sudo bash ./ami.sh</code></p>
 <p>Once the installation is complete, <strong>Coronium ChatterBox</strong> is ready for action. Log out of the server by typing <strong>exit</strong> on the command line.</p>
-<h2 id="testing">Testing</h2>
-<p>You can now test the server connection using <strong>telnet</strong> on your local command prompt:</p>
-<div class="codehilite"><pre><span></span>telnet &lt;your-instance-ip&gt; 7175
-</pre></div>
-
-
-<p>The server should repond with a "handshake" prompt:</p>
-<div class="codehilite"><pre><span></span>{&quot;_handshake&quot;:1}
-</pre></div>
-
-
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>The server will disconnect any client who does not properly respond to a handshake request after 5 seconds.</p>
-</div>
-<h2 id="logs">Logs</h2>
-<p>If you'd like to view the log file, then log in with the <strong>coronium</strong> user.</p>
-<div class="codehilite"><pre><span></span>ssh coronium@&lt;your-instance-ip&gt;
-</pre></div>
-
-
-<p>To watch the log in real-time:</p>
-<div class="codehilite"><pre><span></span>tail -f ~/logs/chatterbox.log
-</pre></div>
-
-
-<p>Press <strong>control-x</strong> to stop watching the log file.</p>
-<h2 id="password">Password</h2>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The default password for a fresh install is: <strong>coroniumadmin</strong>.</p>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>You should change the default password after the install. Making sure to log in as the <strong>coronium</strong> user, enter <strong>sudo passwd coronium</strong> in the shell, and then follow the prompts.</p>
-</div>
               
             </div>
           </div>

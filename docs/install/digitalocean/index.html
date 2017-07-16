@@ -65,10 +65,10 @@
         
             <ul>
             
-                <li class="toctree-l3"><a href="#create-a-new-droplet">Create A New Droplet</a></li>
+                <li class="toctree-l3"><a href="#create-a-droplet">Create A Droplet</a></li>
                 
             
-                <li class="toctree-l3"><a href="#connect-to-the-droplet">Connect To The Droplet</a></li>
+                <li class="toctree-l3"><a href="#install-chatterbox">Install ChatterBox</a></li>
                 
             
             </ul>
@@ -234,7 +234,7 @@
 <p class="admonition-title">Tip</p>
 <p>If you're new to <a href="https://m.do.co/c/cddeeddbbdb8">DigitalOcean</a> please consider signing up with <strong><a href="https://m.do.co/c/cddeeddbbdb8">this link</a></strong>. Not only will you receive a $10 credit (2 free months), but it also helps support the continued development, and testing of <strong>Coronium ChatterBox</strong>.</p>
 </div>
-<h3 id="create-a-new-droplet">Create A New Droplet</h3>
+<h3 id="create-a-droplet">Create A Droplet</h3>
 <p>Once you log into your <a href="https://m.do.co/c/cddeeddbbdb8">DigitalOcean</a> account, click the <strong>Create</strong> button and select <strong>Droplets</strong> from the menu.</p>
 <p><img alt="step1" src="../../imgs/step01.png" /></p>
 <p>On the next screen, first select a <strong>Ubuntu 17.04</strong> droplet distribution.</p>
@@ -258,7 +258,7 @@
 </div>
 <p>And finally, click the <strong>Create</strong> button to spin up the droplet.</p>
 <p><img alt="step7" src="../../imgs/step07.png" /></p>
-<h3 id="connect-to-the-droplet">Connect To The Droplet</h3>
+<h3 id="install-chatterbox">Install ChatterBox</h3>
 <p>Once your droplet is done spinning up, note the ip address.</p>
 <p><img alt="step8" src="../../imgs/step08.png" /></p>
 <p>Using a terminal/shell of your choice, SSH into the droplet.</p>
@@ -272,7 +272,7 @@
 
 <p><em>Replace <strong>&lt;your-instance-ip></strong> with the address that was assigned to your droplet.</em></p>
 <p>Once you are connected to the droplet, copy and paste the following line into the terminal:</p>
-<p><code>curl -LO https://s3.amazonaws.com/coronium-chatterbox/cb.sh &amp;&amp; sudo bash ./cb.sh</code></p>
+<p><code>curl -LO https://s3.amazonaws.com/coronium-chatterbox/up.sh &amp;&amp; sudo bash ./up.sh</code></p>
 <p>Once the installation is complete, <strong>Coronium ChatterBox</strong> is ready for connections. Log out of the server by typing <strong>exit</strong> on the command line.</p>
 <p><em>You can also run <strong>Coronium Chatterbox</strong> locally, with a standalone binary from the <a href="https://github.com/develephant/coronium-chatterbox-standalone">standalone repository</a>.</em></p>
               

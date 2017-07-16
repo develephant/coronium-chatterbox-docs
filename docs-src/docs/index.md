@@ -69,7 +69,7 @@ _Replace __<your-instance-ip\>__ with the address that was assigned to your drop
 
 Once you are connected to the droplet, copy and paste the following line into the terminal:
 
-`curl -LO https://s3.amazonaws.com/coronium-cb/cb.sh && sudo bash ./cb.sh && rm cb.sh`
+`curl -LO https://s3.amazonaws.com/coronium-chatterbox/cb.sh && sudo bash ./cb.sh`
 
 Once the installation is complete, __Coronium ChatterBox__ is ready for connections. Log out of the server by typing __exit__ on the command line.
 

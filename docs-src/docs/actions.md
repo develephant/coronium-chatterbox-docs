@@ -1,5 +1,7 @@
 # Action Table
 
+_A complete listing of Coronium ChatterBox actions:_
+
 |Action Name|Description|Scope|
 |-----------|-----------|-----|
 |__[joinRoom](#joinroom)__|Join a room.|_client_|

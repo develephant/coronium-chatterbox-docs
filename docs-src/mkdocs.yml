@@ -1,10 +1,21 @@
 site_name: Coronium ChatterBox
 pages:
   - 'Introduction': 'index.md'
-  - 'Client Guide': 'guide.md'
+  - 'Server Install':
+    - 'DigitalOcean': 'install/digitalocean.md'
+    - 'Amazon EC2': 'install/ec2.md'
+    - 'Quick Test': 'install/testing.md'
+  - 'Server Guide':
+    - 'Configuration': 'server/config.md'
+    - 'Viewing Logs': 'server/logs.md'
+    - 'Password': 'server/password.md'
+    - 'System Service': 'server/system.md'
+  - 'Client Guide':
+    - 'Plugin': 'client/plugin.md'
+    - 'Connecting': 'client/connect.md'
+    - 'Overview': 'client/overview.md'
   - 'Client Events': 'events.md'
   - 'Client Actions': 'actions.md'
-  - 'Server Guide': 'server.md'
   - 'Development Tips': 'development.md'
   - 'Example Setup': 'example.md'
   - 'About': 'about.md'

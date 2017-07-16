@@ -1,5 +1,7 @@
 # Event Table
 
+_A complete listing of Coronium ChatterBox events:_
+
 |Event Name|Description|Scope|
 |----------|-----------|-----|
 |__[OnConnect](#onconnect)__|The client has connected to the server.|_client_|

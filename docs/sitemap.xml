@@ -10,11 +10,75 @@
     
 
     
+        
     <url>
-     <loc>https://develephant.github.io/coronium-cs-docs/guide/</loc>
+     <loc>https://develephant.github.io/coronium-cs-docs/install/digitalocean/</loc>
      <lastmod>2017-07-16</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
+    <url>
+     <loc>https://develephant.github.io/coronium-cs-docs/install/ec2/</loc>
+     <lastmod>2017-07-16</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://develephant.github.io/coronium-cs-docs/install/testing/</loc>
+     <lastmod>2017-07-16</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>https://develephant.github.io/coronium-cs-docs/server/config/</loc>
+     <lastmod>2017-07-16</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://develephant.github.io/coronium-cs-docs/server/logs/</loc>
+     <lastmod>2017-07-16</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://develephant.github.io/coronium-cs-docs/server/password/</loc>
+     <lastmod>2017-07-16</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://develephant.github.io/coronium-cs-docs/server/system/</loc>
+     <lastmod>2017-07-16</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>https://develephant.github.io/coronium-cs-docs/client/plugin/</loc>
+     <lastmod>2017-07-16</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://develephant.github.io/coronium-cs-docs/client/connect/</loc>
+     <lastmod>2017-07-16</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://develephant.github.io/coronium-cs-docs/client/overview/</loc>
+     <lastmod>2017-07-16</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
     
 
     
@@ -28,14 +92,6 @@
     
     <url>
      <loc>https://develephant.github.io/coronium-cs-docs/actions/</loc>
-     <lastmod>2017-07-16</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>https://develephant.github.io/coronium-cs-docs/server/</loc>
      <lastmod>2017-07-16</lastmod>
      <changefreq>daily</changefreq>
     </url>

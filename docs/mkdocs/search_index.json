@@ -42,7 +42,7 @@
         },
         {
             "location": "/install/testing/",
-            "text": "Test the server connection by using \ntelnet\n on your local command prompt:\n\n\ntelnet <your-instance-ip> 7175\n\n\n\n\n\nThe server should repond with a \"handshake\" prompt:\n\n\n{\"_handshake\":1}\n\n\n\n\n\n\n\nTip\n\n\nThe server will disconnect any client who does not properly respond to a handshake request after 5 seconds.",
+            "text": "Test the server connection by using \ntelnet\n on your local command prompt:\n\n\ntelnet <your-instance-ip> 7175\n\n\n\n\n\nThe server should respond with a \"handshake\" prompt:\n\n\n{\"_handshake\":1}\n\n\n\n\n\n\n\nTip\n\n\nThe server will disconnect any client who does not properly respond to a handshake request after 5 seconds.",
             "title": "Quick Test"
         },
         {

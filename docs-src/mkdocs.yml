@@ -18,6 +18,7 @@ pages:
   - 'Client Actions': 'actions.md'
   - 'Development Tips': 'development.md'
   - 'Example Setup': 'example.md'
+  - 'Demo': 'demo.md'
   - 'About': 'about.md'
 copyright: "&copy;2017 C. Byerley - develephant.com"
 theme: readthedocs

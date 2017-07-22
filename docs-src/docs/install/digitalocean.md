@@ -4,6 +4,10 @@ __Coronium ChatterBox__ runs best on a __[DigitalOcean](https://m.do.co/c/cddeed
     If you're new to [DigitalOcean](https://m.do.co/c/cddeeddbbdb8) please consider signing up with __[this link](https://m.do.co/c/cddeeddbbdb8)__. Not only will you receive a $10 credit (2 free months), but it also helps support the continued development, and testing of __Coronium ChatterBox__.
 
 
+!!! note "Screencast"
+    View the installation instructions in a screencast format by [clicking here](https://www.youtube.com/watch?v=YvD-3SSsVT0).
+
+
 ### Create A Droplet
 
 Once you log into your [DigitalOcean](https://m.do.co/c/cddeeddbbdb8) account, click the __Create__ button and select __Droplets__ from the menu.

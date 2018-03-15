@@ -1,4 +1,4 @@
-__Coronium ChatterBox__ runs best on a __[DigitalOcean](https://m.do.co/c/cddeeddbbdb8) Ubuntu 17.04__ droplet.
+__Coronium ChatterBox__ runs best on a __[DigitalOcean](https://m.do.co/c/cddeeddbbdb8) Ubuntu 16.04__ droplet.
 
 !!! tip
     If you're new to [DigitalOcean](https://m.do.co/c/cddeeddbbdb8) please consider signing up with __[this link](https://m.do.co/c/cddeeddbbdb8)__. Not only will you receive a $10 credit (2 free months), but it also helps support the continued development, and testing of __Coronium ChatterBox__.
@@ -14,11 +14,11 @@ Once you log into your [DigitalOcean](https://m.do.co/c/cddeeddbbdb8) account, c
 
 ![step1](../imgs/step01.png)
 
-On the next screen, first select a __Ubuntu 17.04__ droplet distribution.
+On the next screen, first select a __Ubuntu 16.04.x__ droplet distribution.
 
 ![step2](../imgs/step02.png) 
 
-Select your preferred droplet size. A __512MB/1 CPU__ droplet is a good starting point. You can always increase the size later.
+Select your preferred droplet size. A __1GB/1 CPU__ droplet is a good starting point. You can always increase the size later.
 
 ![step3](../imgs/step03.png)
 
@@ -37,10 +37,7 @@ Now give your droplet a hostname.
 
 ![step6](../imgs/step06.png)
 
-_Be sure to replace __cbox.develephant.com__ with your own hostname._
-
-!!! warning
-    Do not use __chatterbox__ as your subdomain, or the server monitor will refuse to start. You can however use __chatterbox-1__, etc.
+_Be sure to replace __develephant.com__ with your own hostname._
 
 And finally, click the __Create__ button to spin up the droplet.
 

@@ -44,13 +44,13 @@ To update the configuration file, log in with the __coronium__ user:
 ssh coronium@<your-instance-ip>
 ```
 
-Open the __config.lua__ using the __nano__ file editor:
+Open the __chatterbox/config.lua__ using the __nano__ file editor:
 
 ```
 nano ~/config.lua
 ```
 
-You should see the following default content in the __config.lua__ file:
+You should see the following default content in the __chatterbox/config.lua__ file:
 
 ```
 return 

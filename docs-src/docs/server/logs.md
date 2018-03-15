@@ -7,10 +7,10 @@ ssh coronium@<your-instance-ip>
 To watch the log in real-time:
 
 ```
-tail -f ~/logs/chatterbox.log
+tail -f ~/chatterbox/logs/chatterbox.log
 ```
 
-Press __control-x__ to stop watching the log file.
+Press __control-c__ to stop watching the log file.
 
 !!! note
     The log file is managed automatically, and will be "rotated" once it exceeds a certain size limit.
